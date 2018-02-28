@@ -1,5 +1,6 @@
 package Utils;
 
+import App.App;
 import App.AudioMaster;
 import App.Source;
 import org.apache.commons.io.FileUtils;
@@ -28,16 +29,14 @@ public class SoundUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         //init the voices
         initVoices();
 
         TextToSpeech tts = new TextToSpeech();
         for (int i = 0; i < tags.size(); i++) {
-            String fileName = tags.get(i).getFileName();
-
-            tts.setVoice(voices.get(i%6));
+            tts.setVoice(voices.get(i % 6));
             tts.saveToFile(tags.get(i).getContent(), 1.0f, false, false, tags.get(i).getFileName());
-
         }
     }
 
@@ -53,6 +52,7 @@ public class SoundUtil {
     /**
      * Create 3 sources that remain permanent!!
      * Only the buffer change
+     *
      * @param tags
      */
     public static void createSources(ArrayList<Tag> tags) {
@@ -61,7 +61,7 @@ public class SoundUtil {
         double xInc = 40.000 / 2;
         double yInc = 20.0 / 3.0;
         for (int i = 0; i < 3; i++) {
-            if(tags.size() < i){
+            if (tags.size() < i) {
                 return;
             }
 
@@ -75,7 +75,7 @@ public class SoundUtil {
             //the center source, special position(with y)
             if (i % 2 == 1) {
                 source.setPosition((float) (-20 + (i * xInc)), 10, 0);
-            }else{
+            } else {
                 source.setPosition((float) (-20 + (i * xInc)), 0, 0);
             }
 
@@ -94,7 +94,7 @@ public class SoundUtil {
     public static void playTags() {
         isReady = false;
         System.out.println("In play tags");
-        for(int i = 0; i < sourceList.size();i++){
+        for (int i = 0; i < sourceList.size(); i++) {
             sourceList.get(i).play(bufferList.get(i));
             try {
                 Thread.sleep(1000);
@@ -117,24 +117,33 @@ public class SoundUtil {
     }
 
     public static void rotateRight() {
-        mCurrentTag=(mCurrentTag+3)%tags.size();;
+        mCurrentTag = (mCurrentTag + 3) % tags.size();
+        ;
     }
 
-    public  static void updateSources(){
+    public static void updateSources() {
         int bufferLeft = AudioMaster.loadSound(tags.get(mCurrentTag).getFileName() + ".wav");
-        int bufferCenter = AudioMaster.loadSound(tags.get(mCurrentTag+1).getFileName() + ".wav");
-        int bufferRight = AudioMaster.loadSound(tags.get(mCurrentTag+2).getFileName() + ".wav");
-        bufferList.set(0 , bufferRight);
-        bufferList.set(1,bufferCenter);
-        bufferList.set(2,bufferLeft);
+        int bufferCenter = AudioMaster.loadSound(tags.get(mCurrentTag + 1).getFileName() + ".wav");
+        int bufferRight = AudioMaster.loadSound(tags.get(mCurrentTag + 2).getFileName() + ".wav");
+        bufferList.set(0, bufferRight);
+        bufferList.set(1, bufferCenter);
+        bufferList.set(2, bufferLeft);
     }
 
     public static void rotateLeft() {
-        if (mCurrentTag ==0){
-            mCurrentTag = tags.size()-3;
+        if (mCurrentTag == 0) {
+            mCurrentTag = tags.size() - 3;
+        } else {
+            mCurrentTag = (mCurrentTag - 3) % tags.size();
+            ;
         }
-        else {
-            mCurrentTag=(mCurrentTag-3)%tags.size();;
-        }
+    }
+
+    public static void playBuffer() {
+        int buffer = AudioMaster.loadSound(App.BYTES);
+        final Source source = new Source();
+        source.setBuffer(buffer);
+        source.setLooping(true);
+        source.play();
     }
 }

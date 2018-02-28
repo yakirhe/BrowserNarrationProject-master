@@ -1,13 +1,17 @@
 package Utils;
 
+import java.io.BufferedInputStream;
+import java.io.OutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.stream.Stream;
 
 import javax.sound.sampled.*;
 
+import App.App;
 import marytts.util.data.audio.MonoAudioInputStream;
 import marytts.util.data.audio.StereoAudioInputStream;
 
@@ -258,40 +262,49 @@ public class AudioPlayer extends Thread {
 
         File dir = new File(this.getClass().getClassLoader().getResource("").getPath() + "/audio");
         //if directory not exist create it
-        if(!dir.exists()){
-            try{
+        if (!dir.exists()) {
+            try {
                 dir.mkdir();
-            }
-            catch(SecurityException se){
+            } catch (SecurityException se) {
                 //handle it
             }
         }
 
+        //save the audio input stream
+
         File fileOut = new File("./out/production/BrowserNarrationProject/audio/" + fileName + ".wav");
         AudioFileFormat.Type fileType = AudioFileFormat.Type.WAVE;
-        try {
-            AudioSystem.write(ais, fileType, fileOut);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            AudioSystem.write(ais, fileType, App.STREAM);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            AudioSystem.write(ais, fileType, fileOut);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         ////////////////////////////////////////////////////////////////////////////////
 
+        boolean changed = false;
         int nRead = 0;
         byte[] abData = new byte[65532];
         while ((nRead != -1) && (!exitRequested)) {
             try {
                 nRead = ais.read(abData, 0, abData.length);
-            } catch (IOException ex) {
+                changed = true;
+            } catch (Exception ex) {
                 Logger.getLogger(getClass().getName()).log(Level.WARNING, null, ex);
             }
-            if (nRead >= 0) {
-                line.write(abData, 0, nRead);
-            }
+
         }
-        if (!exitRequested) {
-            line.drain();
+        if(changed){
+            App.BYTES = abData;
         }
-        line.close();
+        //if (!exitRequested) {
+        //    line.drain();
+        //}
+        //line.close();
     }
 
 }

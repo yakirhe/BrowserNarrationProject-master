@@ -3,6 +3,10 @@ package App;
 import org.lwjgl.openal.AL;
 import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.ALC;
+
+import javax.sound.sampled.AudioInputStream;
+import java.io.BufferedInputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import static org.lwjgl.openal.AL10.alDeleteBuffers;
@@ -54,4 +58,13 @@ public class AudioMaster
 		alcDestroyContext(context);
 		alcCloseDevice(device);
 	}
+
+    public static int loadSound(byte[] bis) {
+        final int buffer = AL10.alGenBuffers();
+        buffers.add(buffer);
+        WaveData wavFile = WaveData.create(bis);
+        AL10.alBufferData(buffer, wavFile.format, wavFile.data, wavFile.samplerate);
+        wavFile.dispose();
+        return buffer;
+    }
 }
