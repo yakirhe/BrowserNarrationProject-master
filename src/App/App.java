@@ -16,7 +16,7 @@ public class App {
     private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
 
     public static void main(String[] args){
-        //asdasdCXZzxcsdfsada
+        //asdasdCXZzxcsdfsadajgj
         System.out.println("Connecting to "+ URL_LINK);
         //1. connect to the web
         WebUtil.connectToWebsite(URL_LINK);
