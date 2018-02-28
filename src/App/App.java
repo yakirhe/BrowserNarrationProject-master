@@ -17,11 +17,13 @@ import java.util.ArrayList;
  */
 public class App {
     private static final float LISTENER_POS_X = 0, LISTENER_POS_Y = 0, LISTENER_POS_Z = 0;
-    private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
+    //private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
+    private static final String URL_LINK = "http://www.bbc.com/news"; //the webpage url
     public static OutputStream STREAM;
     public static AudioInputStream AIS;
     public static boolean FIRST_TIME = true;
     public static byte[] BYTES;
+    public static AudioInputStream ais;
 
     public static void main(String[] args) {
         //asdasdCXZzxcsdfsadajgj
@@ -39,11 +41,10 @@ public class App {
 
         System.out.println(WaveData.class.getClassLoader().getResource("").getPath());
 
-        SoundUtil.createWavFiles(tags);
+        //SoundUtil.createWavFiles(tags);
         //4. play them
-
-        SoundUtil.playBuffer();
-        //SoundUtil.createSources(tags);
+        //SoundUtil.playBuffer();
+        SoundUtil.createSources(tags);
         //SoundUtil.playTags();
 
         MainFrame app = new MainFrame();

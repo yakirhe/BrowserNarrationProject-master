@@ -59,10 +59,10 @@ public class AudioMaster
 		alcCloseDevice(device);
 	}
 
-    public static int loadSound(byte[] bis) {
+    public static int loadSound(AudioInputStream ais) {
         final int buffer = AL10.alGenBuffers();
         buffers.add(buffer);
-        WaveData wavFile = WaveData.create(bis);
+        WaveData wavFile = WaveData.create(ais);
         AL10.alBufferData(buffer, wavFile.format, wavFile.data, wavFile.samplerate);
         wavFile.dispose();
         return buffer;

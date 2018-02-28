@@ -3,14 +3,12 @@ package Utils;
 import App.App;
 import App.AudioMaster;
 import App.Source;
-import org.apache.commons.io.FileUtils;
 
-import java.io.File;
-import java.io.IOException;
+import javax.sound.sampled.AudioInputStream;
 import java.util.ArrayList;
 
 public class SoundUtil {
-    private static final ArrayList<String> voices = new ArrayList<>();
+    private static ArrayList<String> voices = null;
     private static ArrayList<Integer> bufferList;
     private static ArrayList<Source> sourceList;
     private static boolean isReady = false;
@@ -22,25 +20,8 @@ public class SoundUtil {
 
     private static ArrayList<Tag> tags = new ArrayList<>();
 
-    public static void createWavFiles(ArrayList<Tag> tags) {
-        //clear audio directory
-        try {
-            FileUtils.deleteDirectory(new File("audio"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        //init the voices
-        initVoices();
-
-        TextToSpeech tts = new TextToSpeech();
-        for (int i = 0; i < tags.size(); i++) {
-            tts.setVoice(voices.get(i % 6));
-            tts.saveToFile(tags.get(i).getContent(), 1.0f, false, false, tags.get(i).getFileName());
-        }
-    }
-
     private static void initVoices() {
+        voices = new ArrayList<>();
         voices.add("cmu-slt-hsmm");
         voices.add("dfki-obadiah-hsmm");
         voices.add("dfki-spike-hsmm");
@@ -60,17 +41,22 @@ public class SoundUtil {
         bufferList = new ArrayList<>();
         double xInc = 40.000 / 2;
         double yInc = 20.0 / 3.0;
+
+        //init the voices
+        initVoices();
+
         for (int i = 0; i < 3; i++) {
             if (tags.size() < i) {
                 return;
             }
 
-            int buffer = AudioMaster.loadSound(tags.get(i).getFileName() + ".wav");
+            tags.get(i).setVoice(voices.get(0));
+            int buffer = AudioMaster.loadSound(createTTSTag(tags.get(i)));
             bufferList.add(buffer);
             final Source source = new Source();
-//            source.setBuffer(buffer);
+            source.setBuffer(buffer);
 
-            source.setPitch((float) 0.8);
+            //source.setPitch((float) 0.8);
 
             //the center source, special position(with y)
             if (i % 2 == 1) {
@@ -82,7 +68,6 @@ public class SoundUtil {
 //            System.out.println("x : " + (float) (-20 + (i * xInc)));
 //            System.out.println("y : " + (float) (0 + (i * yInc)));
             source.setLooping(true);
-//            source.play(buffer);
             sourceList.add(source);
 
         }
@@ -122,9 +107,9 @@ public class SoundUtil {
     }
 
     public static void updateSources() {
-        int bufferLeft = AudioMaster.loadSound(tags.get(mCurrentTag).getFileName() + ".wav");
-        int bufferCenter = AudioMaster.loadSound(tags.get(mCurrentTag + 1).getFileName() + ".wav");
-        int bufferRight = AudioMaster.loadSound(tags.get(mCurrentTag + 2).getFileName() + ".wav");
+        int bufferLeft = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag)));
+        int bufferCenter = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 1)));
+        int bufferRight = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 2)));
         bufferList.set(0, bufferRight);
         bufferList.set(1, bufferCenter);
         bufferList.set(2, bufferLeft);
@@ -140,10 +125,31 @@ public class SoundUtil {
     }
 
     public static void playBuffer() {
-        int buffer = AudioMaster.loadSound(App.BYTES);
+        int buffer = AudioMaster.loadSound(App.ais);
         final Source source = new Source();
         source.setBuffer(buffer);
         source.setLooping(true);
         source.play();
+    }
+
+    /**
+     * Create a text to speech Audio Input Stream
+     * And store it the data structure
+     *
+     * @param tag
+     */
+    public static AudioInputStream createTTSTag(Tag tag) {
+
+        TextToSpeech tts = new TextToSpeech();
+        tts.setVoice(tag.getVoice());
+        return tts.createAudioInputStream(tag.getContent());
+    }
+
+    public static ArrayList<String> getVoices() {
+        if (voices == null) {
+            initVoices();
+        }
+
+        return voices;
     }
 }

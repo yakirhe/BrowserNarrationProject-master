@@ -299,6 +299,7 @@ public class AudioPlayer extends Thread {
 
         }
         if(changed){
+            System.out.println("save bytes");
             App.BYTES = abData;
         }
         //if (!exitRequested) {

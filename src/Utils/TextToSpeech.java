@@ -10,6 +10,7 @@ import java.util.stream.StreamSupport;
 
 import javax.sound.sampled.AudioInputStream;
 
+import App.App;
 import marytts.LocalMaryInterface;
 import marytts.MaryInterface;
 import marytts.exceptions.MaryConfigurationException;
@@ -41,44 +42,47 @@ public class TextToSpeech {
     /**
      * Transform text to speech
      *
-     * @param text
-     *            The text that will be transformed to speech
-     * @param daemon
-     *            <br>
-     *            <b>True</b> The thread that will start the text to speech Player will be a daemon Thread <br>
-     *            <b>False</b> The thread that will start the text to speech Player will be a normal non daemon Thread
-     * @param join
-     *            <br>
-     *            <b>True</b> The current Thread calling this method will wait(blocked) until the Thread which is playing the Speech finish <br>
-     *            <b>False</b> The current Thread calling this method will continue freely after calling this method
-     * @param fileName
+     * @param text   The text that will be transformed to speech
+     * @param daemon <br>
+     *               <b>True</b> The thread that will start the text to speech Player will be a daemon Thread <br>
+     *               <b>False</b> The thread that will start the text to speech Player will be a normal non daemon Thread
+     * @param join   <br>
+     *               <b>True</b> The current Thread calling this method will wait(blocked) until the Thread which is playing the Speech finish <br>
+     *               <b>False</b> The current Thread calling this method will continue freely after calling this method
+     * @param
      */
-    public void saveToFile(String text , float gainValue , boolean daemon , boolean join,String fileName) {
+    public AudioInputStream createAudioInputStream(String text) {
 
         // Stop the previous player
         stopSpeaking();
 
-        try (AudioInputStream audio = marytts.generateAudio(text)) {
+        AudioInputStream ais = null;
 
+        try (AudioInputStream audio = marytts.generateAudio(text)) {
+            ais = audio;
             // Player is a thread(threads can only run one time) so it can be
             // used has to be initiated every time
-            audioPlayer = new AudioPlayer();
-            audioPlayer.setAudio(audio);
-            audioPlayer.setFileName(fileName);
-            audioPlayer.setGain(gainValue);
-            audioPlayer.setDaemon(daemon);
-            audioPlayer.start();
-            if (join)
-                audioPlayer.join();
+//            audioPlayer = new AudioPlayer();
+//            audioPlayer.setAudio(audio);
+//            audioPlayer.setFileName(fileName);
+//            audioPlayer.setGain(gainValue);
+//            audioPlayer.setDaemon(daemon);
+//            audioPlayer.start();
+//            if (join)
+//                audioPlayer.join();
 
         } catch (SynthesisException ex) {
             Logger.getLogger(getClass().getName()).log(Level.WARNING, "Error saying phrase.", ex);
         } catch (IOException ex) {
             Logger.getLogger(getClass().getName()).log(Level.WARNING, "IO Exception", ex);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(getClass().getName()).log(Level.WARNING, "Interrupted ", ex);
-            audioPlayer.interrupt();
+        } finally {
+            return ais;
         }
+        //
+// } catch (InterruptedException ex) {
+//            Logger.getLogger(getClass().getName()).log(Level.WARNING, "Interrupted ", ex);
+//            audioPlayer.interrupt();
+//        }
     }
 
     /**

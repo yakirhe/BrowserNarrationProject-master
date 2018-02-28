@@ -51,15 +51,31 @@ public class WebUtil {
         //create an empty array list to store the tags
         ArrayList<Tag> items = new ArrayList<>();
 
+        //get all the nav tags
+        Elements navs = doc.getElementsByTag("nav");
+        int i = 1;
+        for(Element nav : navs){
+            System.out.println("Nav "+i++);
+            Elements linksa = nav.getElementsByTag("a");
+            for (Element link: linksa) {
+                System.out.println(link.text());
+            }
+            System.out.println();
+        }
+
         //get all the `a` tags
         Elements links = doc.getElementsByTag("a");
-        int i = 0;
+        i = 0;
         for (Element link : links) {
             String linkText = link.text();
 
             //add only the links with text
             if (linkText.trim().length() != 0) {
                 items.add(new Tag(String.valueOf(i), linkText, Type.LINK));
+
+                //set voice to the tag
+                items.get(i).setVoice(SoundUtil.getVoices().get(i % SoundUtil.getVoices().size()));
+
                 i++;
             }
         }

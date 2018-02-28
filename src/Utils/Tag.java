@@ -6,6 +6,7 @@ public class Tag {
     private String fileName;
     private String content;
     private Type type;
+    private String voice;
 
     public Tag(String fileName, String content, Type type){
         this.fileName = fileName;
@@ -35,5 +36,13 @@ public class Tag {
 
     public void setType(Type type){
         this.type = type;
+    }
+
+    public String getVoice() {
+        return voice;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
     }
 }
