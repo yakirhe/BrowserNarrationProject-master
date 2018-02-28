@@ -16,6 +16,7 @@ public class AudioMaster
 
 	public static void init()
 	{
+		//kjgkgk
 		final String defaultDeviceName = alcGetString(0, ALC_DEFAULT_DEVICE_SPECIFIER);
 		device = alcOpenDevice(defaultDeviceName);
 
