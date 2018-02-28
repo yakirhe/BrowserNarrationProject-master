@@ -4,6 +4,7 @@ import Utils.KeyInput;
 
 import javax.swing.*;
 import App.*;
+import Utils.SoundUtil;
 
 import java.awt.event.KeyEvent;
 
@@ -37,8 +38,20 @@ public class MainFrame extends JFrame {
                     break;
                 case KeyEvent.VK_RIGHT:
                     System.out.println("You pressed right");
+                    SoundUtil.rotateRight();
+                    SoundUtil.updateSources();
+                    SoundUtil.playTags();
                     break;
                 case KeyEvent.VK_1:
+                    SoundUtil.rotateLeft();
+                    SoundUtil.updateSources();
+                    SoundUtil.playTags();
+                    break;
+                case KeyEvent.VK_P:
+                    if(SoundUtil.getIsReady()){
+                        //play sound
+                        SoundUtil.playTags();
+                    }
                     break;
             }
             keyIsPressed = true;

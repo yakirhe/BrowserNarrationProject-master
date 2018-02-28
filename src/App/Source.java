@@ -5,6 +5,11 @@ import org.lwjgl.openal.AL10;
 public class Source
 {
 	private int sourceId;
+	private int mBuffer;
+
+	public void setBuffer(int buffer){
+		mBuffer = buffer;
+	}
 
 	public Source()
 	{
@@ -15,6 +20,13 @@ public class Source
 	{
 		stop();
 		AL10.alSourcei(sourceId, AL10.AL_BUFFER, buffer);
+		continuePlaying();
+	}
+
+	public void play()
+	{
+		stop();
+		AL10.alSourcei(sourceId, AL10.AL_BUFFER, mBuffer);
 		continuePlaying();
 	}
 

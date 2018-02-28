@@ -2,6 +2,7 @@ package App;
 
 import GUI.MainFrame;
 import Utils.SoundUtil;
+import Utils.Tag;
 import Utils.WebUtil;
 import java.util.ArrayList;
 
@@ -20,7 +21,8 @@ public class App {
         WebUtil.connectToWebsite(URL_LINK);
 
         //2. extract the tags from the web
-        ArrayList<String> tags = WebUtil.getItems();
+        ArrayList<Tag> tags = WebUtil.getItems();
+        SoundUtil.setTags(tags);
 
         //3. create the wav files from the tagss
         AudioMaster.init();
@@ -29,16 +31,20 @@ public class App {
         System.out.println(WaveData.class.getClassLoader().getResource("").getPath());
         SoundUtil.createWavFiles(tags);
         //4. play them
-        SoundUtil.createSources(tags);
-//        SoundUtil.playTags();
 
+
+
+        SoundUtil.createSources(tags);
+       // SoundUtil.playTags();
+
+        MainFrame app = new MainFrame();
+        app.init();
 
         //test - print all the tags
         //testTags(tags);
 
         //open GUI
-        MainFrame app = new MainFrame();
-        app.init();
+
     }
 
     private static void testTags(ArrayList<String> tags) {

@@ -42,23 +42,26 @@ public class WebUtil {
      *
      * @return
      */
-    public static ArrayList<String> getItems() {
+    public static ArrayList<Tag> getItems() {
         //check if we are connected to the webpage
         if (doc == null) {
             return null;
         }
 
         //create an empty array list to store the tags
-        ArrayList<String> items = new ArrayList<>();
+        ArrayList<Tag> items = new ArrayList<>();
 
         //get all the `a` tags
         Elements links = doc.getElementsByTag("a");
+        int i = 0;
         for (Element link : links) {
             String linkText = link.text();
 
             //add only the links with text
-            if (linkText.trim().length() != 0)
-                items.add(linkText.trim());
+            if (linkText.trim().length() != 0) {
+                items.add(new Tag(String.valueOf(i), linkText, Type.LINK));
+                i++;
+            }
         }
         return items;
     }
