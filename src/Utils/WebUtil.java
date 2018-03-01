@@ -42,47 +42,43 @@ public class WebUtil {
      *
      * @return
      */
-    public static ArrayList<Tag> getItems() {
+    public static Map<String, ArrayList<Tag>> getItems() {
         //check if we are connected to the webpage
         if (doc == null) {
             return null;
         }
 
-        Map<String,List<Tag>> navsDictionary = new HashMap<String,List<Tag>>();
-
-        //create an empty array list to store the tags
-        ArrayList<Tag> items = new ArrayList<>();
+        Map<String, ArrayList<Tag>> navsDictionary = new HashMap<>();
 
         //get all the nav tags
         Elements navs = doc.getElementsByTag("nav");
+
         int i = 1;
-        for(Element nav : navs){
+        for (Element nav : navs) {
+            ArrayList<Tag> tags = new ArrayList<>();
             String navName = nav.attr("aria-label");
-            System.out.println("Nav "+navName);
+            System.out.println("Nav " + navName);
             System.out.println("-----------------------------");
-            Elements linksa = nav.getElementsByTag("a");
-            for (Element link: linksa) {
-                System.out.println(link.text());
+
+            Elements navLinks = nav.getElementsByTag("a");
+            for (Element link : navLinks) {
+                String linkText = link.text();
+
+                //Trim the text
+                linkText.replaceAll("[^A-Za-z0-9]", "");
+                linkText.trim();
+
+                //get the href
+                link.attr("href");
+
+                Tag tag = new Tag(linkText, linkText, Type.LINK);
+                tags.add(tag);
             }
+
+            navsDictionary.put(navName, tags);
             System.out.println();
         }
 
-        //get all the `a` tags
-        Elements links = doc.getElementsByTag("a");
-        i = 0;
-        for (Element link : links) {
-            String linkText = link.text();
-
-            //add only the links with text
-            if (linkText.trim().length() != 0) {
-                items.add(new Tag(String.valueOf(i), linkText, Type.LINK));
-
-                //set voice to the tag
-                items.get(i).setVoice(SoundUtil.getVoices().get(i % SoundUtil.getVoices().size()));
-
-                i++;
-            }
-        }
-        return items;
+        return navsDictionary;
     }
 }

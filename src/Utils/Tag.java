@@ -3,23 +3,23 @@ package Utils;
 import Utils.Type;
 
 public class Tag {
-    private String fileName;
+    private String name;
     private String content;
     private Type type;
     private String voice;
 
-    public Tag(String fileName, String content, Type type){
-        this.fileName = fileName;
+    public Tag(String name, String content, Type type){
+        this.name = name;
         this.content = content;
         this.type = type;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getName() {
+        return name;
     }
 
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
+    public void setName(String fileName) {
+        this.name = fileName;
     }
 
     public String getContent() {

@@ -9,6 +9,8 @@ import javax.sound.sampled.AudioInputStream;
 import java.io.BufferedInputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.Map;
 
 /**
  * This is the main class
@@ -31,8 +33,8 @@ public class App {
         WebUtil.connectToWebsite(URL_LINK);
 
         //2. extract the tags from the web
-        ArrayList<Tag> tags = WebUtil.getItems();
-        SoundUtil.setTags(tags);
+        Map<String,ArrayList<Tag>> navsDictionary = WebUtil.getItems();
+        //SoundUtil.setTags(tags);
 
         //3. create the wav files from the tagss
         AudioMaster.init();
@@ -43,7 +45,7 @@ public class App {
         //SoundUtil.createWavFiles(tags);
         //4. play them
         //SoundUtil.playBuffer();
-        SoundUtil.createSources(tags);
+        //SoundUtil.createSources(tags);
         //SoundUtil.playTags();
 
         MainFrame app = new MainFrame();
