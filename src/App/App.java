@@ -26,7 +26,6 @@ public class App {
     public static AudioInputStream ais;
 
     public static void main(String[] args) {
-        //asdasdCXZzxcsdfsadajgj
         System.out.println("Connecting to " + URL_LINK);
         //1. connect to the web
         WebUtil.connectToWebsite(URL_LINK);

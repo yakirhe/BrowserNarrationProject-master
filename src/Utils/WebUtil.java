@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * This class help us to interact with a website.
@@ -48,6 +48,8 @@ public class WebUtil {
             return null;
         }
 
+        Map<String,List<Tag>> navsDictionary = new HashMap<String,List<Tag>>();
+
         //create an empty array list to store the tags
         ArrayList<Tag> items = new ArrayList<>();
 
@@ -55,7 +57,9 @@ public class WebUtil {
         Elements navs = doc.getElementsByTag("nav");
         int i = 1;
         for(Element nav : navs){
-            System.out.println("Nav "+i++);
+            String navName = nav.attr("aria-label");
+            System.out.println("Nav "+navName);
+            System.out.println("-----------------------------");
             Elements linksa = nav.getElementsByTag("a");
             for (Element link: linksa) {
                 System.out.println(link.text());
