@@ -57,28 +57,45 @@ public class WebUtil {
         for (Element nav : navs) {
             ArrayList<Tag> tags = new ArrayList<>();
             String navName = nav.attr("aria-label");
-            System.out.println("Nav " + navName);
-            System.out.println("-----------------------------");
 
             Elements navLinks = nav.getElementsByTag("a");
             for (Element link : navLinks) {
                 String linkText = link.text();
 
                 //Trim the text
-                linkText.replaceAll("[^A-Za-z0-9]", "");
-                linkText.trim();
+                linkText = linkText.replaceAll("[^A-Za-z0-9 ]", "");
+                linkText = linkText.trim();
 
-                //get the href
-                link.attr("href");
+                if (!linkText.equals("")) {
+                    //get the href
+                    String href = link.attr("href");
 
-                Tag tag = new Tag(linkText, linkText, Type.LINK);
-                tags.add(tag);
+                    Tag tag = new Tag(linkText, href, Type.LINK);
+                    tags.add(tag);
+                }
             }
+            if (tags.size() != 0) {
+                if (!navsDictionary.containsKey(navName)) {
+                    navsDictionary.put(navName, tags);
+                } else {
+                    //combine the lists
+                    ArrayList<Tag> union = union(navsDictionary.get(navName), tags);
+                    navsDictionary.put(navName, union);
+                }
+            }
+        }
+        return navsDictionary;
+    }
 
-            navsDictionary.put(navName, tags);
-            System.out.println();
+    private static ArrayList<Tag> union(List<Tag> list1, List<Tag> list2) {
+        ArrayList<Tag> union = (ArrayList<Tag>) list1;
+
+        for(Tag tag:list2){
+            if(!union.contains(tag)){
+                union.add(tag);
+            }
         }
 
-        return navsDictionary;
+        return union;
     }
 }

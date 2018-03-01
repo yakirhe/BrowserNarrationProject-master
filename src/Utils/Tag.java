@@ -8,7 +8,7 @@ public class Tag {
     private Type type;
     private String voice;
 
-    public Tag(String name, String content, Type type){
+    public Tag(String name, String content, Type type) {
         this.name = name;
         this.content = content;
         this.type = type;
@@ -30,11 +30,11 @@ public class Tag {
         this.content = content;
     }
 
-    public Type getType(){
+    public Type getType() {
         return type;
     }
 
-    public void setType(Type type){
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -44,5 +44,16 @@ public class Tag {
 
     public void setVoice(String voice) {
         this.voice = voice;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Tag other = (Tag) obj;
+        return this.content.equals(other.getContent());
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
