@@ -1,5 +1,6 @@
 package Utils;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -52,15 +53,29 @@ public class WebUtil {
         Map<String, ArrayList<Tag>> navsDictionary = getNavMap();
 
         //2. get all the articles from the first site
-        getSections();
+        Map<String,ArrayList<Tag>> sectionsDictionary = getSections();
 
         //3. unite the navsDictionary and the sections dictionary
         
         return navsDictionary;
     }
 
-    private static void getSections() {
-
+    private static Map<String,ArrayList<Tag>> getSections() {
+        Map<String,ArrayList<Tag>> sectionsDictionary = new HashMap<>();
+        ArrayList<Tag> linksSection = new ArrayList<>();
+        String sectionName = "";
+        Elements section = doc.getElementsByTag("section");
+        //remove the sections that have sections as child
+        for(int i = 0; i < section.size();i++){
+            if(section.select("section").get(i).select("section").size() > 1){
+                section.remove(i);
+            }else{
+                
+            }
+       }
+       //
+        String x = "";
+        return null;
     }
 
     private static Map<String, ArrayList<Tag>> getNavMap() {
