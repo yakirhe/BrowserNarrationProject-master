@@ -20,8 +20,8 @@ import java.util.Map;
  */
 public class App {
     private static final float LISTENER_POS_X = 0, LISTENER_POS_Y = 0, LISTENER_POS_Z = 0;
-    //private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
-    private static final String URL_LINK = "http://www.bbc.com/"; //the webpage url
+    private static final String URL_LINK_OJ = "http://edition.cnn.com/US/OJ/"; //the webpage url
+    private static final String URL_LINK_BBC = "http://www.bbc.com/"; //the webpage url
     public static OutputStream STREAM;
     public static AudioInputStream AIS;
     public static boolean FIRST_TIME = true;
@@ -29,17 +29,19 @@ public class App {
     public static AudioInputStream ais;
 
     public static void main(String[] args) {
-        System.out.println("Connecting to " + URL_LINK);
+        System.out.println("Connecting to " + URL_LINK_OJ);
         //1. connect to the web
-        WebUtil.connectToWebsite(URL_LINK);
+        WebUtil.connectToWebsite(URL_LINK_OJ);
 
         //init voices
         SoundUtil.initVoices();
+
         //2. extract the tags from the web
-        Map<String,ArrayList<Tag>> navsDictionary = WebUtil.getItems();
-        HashMap<String,ArrayList<Tag>> navsDict = (HashMap<String, ArrayList<Tag>>) navsDictionary;
+        //Map<String, ArrayList<Tag>> navsDictionary = WebUtil.getItems();
+        //HashMap<String, ArrayList<Tag>> navsDict = (HashMap<String, ArrayList<Tag>>) navsDictionary;
+
         //
-        SoundUtil.setDictionaryTags(navsDict);
+        //SoundUtil.setDictionaryTags(navsDict);
 
         //3. create the wav files from the tagss
         AudioMaster.init();

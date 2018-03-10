@@ -43,21 +43,23 @@ public class WebUtil {
      *
      * @return
      */
-    public static Map<String, ArrayList<Tag>> getItems() {
+    public static List<Tag> getItems() {
         //check if we are connected to the webpage
         if (doc == null) {
             return null;
         }
 
+
         //1. get all the nav tags
-        Map<String, ArrayList<Tag>> navsDictionary = getNavMap();
+        //Map<String, ArrayList<Tag>> navsDictionary = getNavMap();
 
         //2. get all the articles from the first site
-        getSections();
+        //getSections();
 
         //3. unite the navsDictionary and the sections dictionary
 
-        return navsDictionary;
+        //return navsDictionary;
+        return null;
     }
 
     private static void getSections() {
