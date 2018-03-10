@@ -49,7 +49,7 @@ public class Tag {
     @Override
     public boolean equals(Object obj) {
         Tag other = (Tag) obj;
-        return this.content.equals(other.getContent());
+        return this.name.equals(other.getName());
     }
 
     @Override
