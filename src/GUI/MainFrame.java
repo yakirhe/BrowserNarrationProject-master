@@ -42,6 +42,10 @@ public class MainFrame extends JFrame {
                     SoundUtil.updateSources();
                     SoundUtil.playTags();
                     break;
+                case KeyEvent.VK_N:
+                    System.out.println("You Pressed N");
+                    SoundUtil.navigateTraversal();
+                    break;
                 case KeyEvent.VK_1:
                     SoundUtil.rotateLeft();
                     SoundUtil.updateSources();
@@ -52,6 +56,9 @@ public class MainFrame extends JFrame {
                         //play sound
                         SoundUtil.playTags();
                     }
+                    break;
+                case KeyEvent.VK_ENTER:
+                    SoundUtil.createSources();
                     break;
             }
             keyIsPressed = true;

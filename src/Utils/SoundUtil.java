@@ -3,24 +3,30 @@ package Utils;
 import App.App;
 import App.AudioMaster;
 import App.Source;
+import org.lwjgl.egl.EGLClientPixmapHI;
 
 import javax.sound.sampled.AudioInputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SoundUtil {
     private static ArrayList<String> voices = null;
     private static ArrayList<Integer> bufferList;
     private static ArrayList<Source> sourceList;
-    private static boolean isReady = false;
+    public static boolean isReady = false;
     private static int mCurrentTag;
+    private static HashMap<String,ArrayList<Tag>> _tags = new HashMap<>();
+    private static Integer navBuffer;
+    private static int curNav = -1;
+    private static Tag navTag;
+    private static  Source navSource;
 
-    public static void setTags(ArrayList<Tag> tags) {
-        SoundUtil.tags = tags;
+    public static void setDictionaryTags(HashMap<String,ArrayList<Tag>> tags) {
+        _tags = tags;
     }
 
-    private static ArrayList<Tag> tags = new ArrayList<>();
-
-    private static void initVoices() {
+    public static void initVoices() {
         voices = new ArrayList<>();
         voices.add("cmu-slt-hsmm");
         voices.add("dfki-obadiah-hsmm");
@@ -34,9 +40,8 @@ public class SoundUtil {
      * Create 3 sources that remain permanent!!
      * Only the buffer change
      *
-     * @param tags
      */
-    public static void createSources(ArrayList<Tag> tags) {
+    public static void createSources() {
         sourceList = new ArrayList<Source>();
         bufferList = new ArrayList<>();
         double xInc = 40.000 / 2;
@@ -46,12 +51,13 @@ public class SoundUtil {
         initVoices();
 
         for (int i = 0; i < 3; i++) {
-            if (tags.size() < i) {
+            if (_tags.size() < i) {
                 return;
             }
 
-            tags.get(i).setVoice(voices.get(0));
-            int buffer = AudioMaster.loadSound(createTTSTag(tags.get(i)));
+            _tags.get(curNav).get(i).setVoice(voices.get(0));
+//            tags.get(i).setVoice(voices.get(0));
+            int buffer = AudioMaster.loadSound(createTTSTag(_tags.get(curNav).get(i)));
             bufferList.add(buffer);
             final Source source = new Source();
             source.setBuffer(buffer);
@@ -102,14 +108,17 @@ public class SoundUtil {
     }
 
     public static void rotateRight() {
-        mCurrentTag = (mCurrentTag + 3) % tags.size();
+        mCurrentTag = (mCurrentTag + 3) % _tags.get(curNav).size();
         ;
     }
 
     public static void updateSources() {
-        int bufferLeft = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag)));
-        int bufferCenter = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 1)));
-        int bufferRight = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 2)));
+        int bufferLeft = AudioMaster.loadSound(createTTSTag(_tags.get(curNav).get(mCurrentTag)));
+        int bufferCenter = AudioMaster.loadSound(createTTSTag(_tags.get(curNav).get(mCurrentTag+1)));
+        int bufferRight = AudioMaster.loadSound(createTTSTag(_tags.get(curNav).get(mCurrentTag+2)));
+//        int bufferLeft = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag)));
+//        int bufferCenter = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 1)));
+//        int bufferRight = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 2)));
         bufferList.set(0, bufferRight);
         bufferList.set(1, bufferCenter);
         bufferList.set(2, bufferLeft);
@@ -117,10 +126,9 @@ public class SoundUtil {
 
     public static void rotateLeft() {
         if (mCurrentTag == 0) {
-            mCurrentTag = tags.size() - 3;
+            mCurrentTag = _tags.get(curNav).size() - 3;
         } else {
-            mCurrentTag = (mCurrentTag - 3) % tags.size();
-            ;
+            mCurrentTag = (mCurrentTag - 3) % _tags.get(curNav).size();
         }
     }
 
@@ -152,4 +160,23 @@ public class SoundUtil {
 
         return voices;
     }
+
+    /**
+     * this function set source with nav name
+     */
+    public static void navigateTraversal() {
+        if(navSource!=null){
+            navSource.stop();
+        }
+        curNav = ++curNav%_tags.size();
+        navTag = new Tag((String)(_tags.keySet().toArray()[curNav]),(String)(_tags.keySet().toArray()[curNav]),Type.TEXT);
+        navTag.setVoice(voices.get(0));
+        navBuffer =  AudioMaster.loadSound(createTTSTag(navTag));
+        navSource = new Source();
+        navSource.setBuffer(navBuffer);
+        navSource.setPosition(0,0,0);
+        navSource.setLooping(true);
+        navSource.play();
+    }
+
 }

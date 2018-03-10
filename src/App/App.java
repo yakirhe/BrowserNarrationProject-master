@@ -10,6 +10,7 @@ import java.io.BufferedInputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -32,9 +33,13 @@ public class App {
         //1. connect to the web
         WebUtil.connectToWebsite(URL_LINK);
 
+        //init voices
+        SoundUtil.initVoices();
         //2. extract the tags from the web
         Map<String,ArrayList<Tag>> navsDictionary = WebUtil.getItems();
-        //SoundUtil.setTags(tags);
+        HashMap<String,ArrayList<Tag>> navsDict = (HashMap<String, ArrayList<Tag>>) navsDictionary;
+        //
+        SoundUtil.setDictionaryTags(navsDict);
 
         //3. create the wav files from the tagss
         AudioMaster.init();
@@ -45,9 +50,8 @@ public class App {
         //SoundUtil.createWavFiles(tags);
         //4. play them
         //SoundUtil.playBuffer();
-        //SoundUtil.createSources(tags);
+//        SoundUtil.createSources(tags);
         //SoundUtil.playTags();
-
         MainFrame app = new MainFrame();
         app.init();
 
