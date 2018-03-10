@@ -48,9 +48,24 @@ public class WebUtil {
             return null;
         }
 
+        //1. get all the nav tags
+        Map<String, ArrayList<Tag>> navsDictionary = getNavMap();
+
+        //2. get all the articles from the first site
+        getSections();
+
+        //3. unite the navsDictionary and the sections dictionary
+        
+        return navsDictionary;
+    }
+
+    private static void getSections() {
+
+    }
+
+    private static Map<String, ArrayList<Tag>> getNavMap() {
         Map<String, ArrayList<Tag>> navsDictionary = new HashMap<>();
 
-        //get all the nav tags
         Elements navs = doc.getElementsByTag("nav");
 
         int i = 1;
@@ -74,6 +89,7 @@ public class WebUtil {
                     tags.add(tag);
                 }
             }
+
             if (tags.size() != 0) {
                 if (!navsDictionary.containsKey(navName)) {
                     navsDictionary.put(navName, tags);
@@ -84,6 +100,7 @@ public class WebUtil {
                 }
             }
         }
+
         return navsDictionary;
     }
 
