@@ -30,8 +30,9 @@ public class WebUtil {
 
             System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
 
-            WebDriver driver = new ChromeDriver();
-            driver.get(url); //open the url in chrome
+            //Create a thread to open chrome
+            //WebDriver driver = new ChromeDriver();
+            //driver.get(url); //open the url in chrome
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -55,12 +56,16 @@ public class WebUtil {
         getSections();
 
         //3. unite the navsDictionary and the sections dictionary
-        
+
         return navsDictionary;
     }
 
     private static void getSections() {
+        Elements sections = doc.select("section");
 
+        for (Element section : sections) {
+            int x = 3;
+        }
     }
 
     private static Map<String, ArrayList<Tag>> getNavMap() {
@@ -71,7 +76,7 @@ public class WebUtil {
         int i = 1;
         for (Element nav : navs) {
             ArrayList<Tag> tags = new ArrayList<>();
-            String navName = nav.attr("aria-label");
+            String navName = nav.attr("role");
 
             Elements navLinks = nav.getElementsByTag("a");
             for (Element link : navLinks) {
@@ -85,8 +90,11 @@ public class WebUtil {
                     //get the href
                     String href = link.attr("href");
 
+                    //check if we dont have this tag already
                     Tag tag = new Tag(linkText, href, Type.LINK);
-                    tags.add(tag);
+                    if (!tags.contains(tag)) {
+                        tags.add(tag);
+                    }
                 }
             }
 
@@ -107,8 +115,8 @@ public class WebUtil {
     private static ArrayList<Tag> union(List<Tag> list1, List<Tag> list2) {
         ArrayList<Tag> union = (ArrayList<Tag>) list1;
 
-        for(Tag tag:list2){
-            if(!union.contains(tag)){
+        for (Tag tag : list2) {
+            if (!union.contains(tag)) {
                 union.add(tag);
             }
         }

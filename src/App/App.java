@@ -21,7 +21,7 @@ import java.util.Map;
 public class App {
     private static final float LISTENER_POS_X = 0, LISTENER_POS_Y = 0, LISTENER_POS_Z = 0;
     //private static final String URL_LINK = "http://edition.cnn.com/US/OJ/"; //the webpage url
-    private static final String URL_LINK = "http://www.bbc.com/news"; //the webpage url
+    private static final String URL_LINK = "http://www.bbc.com/"; //the webpage url
     public static OutputStream STREAM;
     public static AudioInputStream AIS;
     public static boolean FIRST_TIME = true;
