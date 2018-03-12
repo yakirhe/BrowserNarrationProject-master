@@ -168,6 +168,7 @@ public class SoundUtil {
         if(navSource!=null){
             navSource.stop();
         }
+        //
         curNav = ++curNav%_tags.size();
         navTag = new Tag((String)(_tags.keySet().toArray()[curNav]),(String)(_tags.keySet().toArray()[curNav]),Type.TEXT);
         navTag.setVoice(voices.get(0));
