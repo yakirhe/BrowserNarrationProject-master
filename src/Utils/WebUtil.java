@@ -75,7 +75,7 @@ public class WebUtil {
      */
     public static Map<String, ArrayList<Tag>> getVoxItems() {
         //Key : nav type  , value : list of nav tag
-        Map<String, ArrayList<Tag>> navsMap = getVoxNavMap();
+        Map<String, ArrayList<Tag>> navsMap = getVoxNavMap("Main Navigation");
         //Key "headline" , value : list of article headline
         //idea : make sub groups like top stores , newest stores ... check the list that i get and check in som category if its the same layout and i can detect it .
         Map<String, ArrayList<Tag>> headlineMap = getVoxHeadline();
@@ -130,17 +130,17 @@ public class WebUtil {
 
     /**
      * extract all the main nav tags fromm the vox news site
-     *
+     *@param navigationType main or sub navigation if main then "Main Navigation" if sub then "Sub Navigation";
      * @return map <key = "Main Navigation" , value = list of tags>
      */
-    private static Map<String, ArrayList<Tag>> getVoxNavMap() {
+    private static Map<String, ArrayList<Tag>> getVoxNavMap(String navigationType) {
         Elements navs = doc.getElementsByTag("nav");
         Map<String, ArrayList<Tag>> navMap = new HashMap<>();
 
         for (Element nav : navs
                 ) {
             ArrayList<Tag> tags;
-            String navName = "Main Navigation";
+            String navName = navigationType;
             //lets extract the tags
             Elements aTags = nav.getElementsByTag("li");
             tags = extractNavElements(aTags);
@@ -289,5 +289,10 @@ public class WebUtil {
         Tag tag = new Tag("article", content, Type.ARTICLE);
         tag.setUrl(App.URL_LINK);
         return tag;
+    }
+
+    public static HashMap<String,ArrayList<Tag>> getVoxSubNav() {
+        return (HashMap<String, ArrayList<Tag>>) getVoxHeadline();
+
     }
 }

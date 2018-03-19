@@ -15,6 +15,7 @@ public class SoundUtil {
     private static int mCurrentTag;
     private static HashMap<String, ArrayList<Tag>> _tags = new HashMap<>();
     private static HashMap<String, ArrayList<Tag>> articleMap = new HashMap<>();
+    private static HashMap<String, ArrayList<Tag>> subNavMap = new HashMap<>();
     private static Integer navBuffer;
     private static int curNav = -1;
     private static Tag navTag;
@@ -78,23 +79,16 @@ public class SoundUtil {
             }
 
             _tags.get(key).get(i).setVoice(voices.get(i + 2));
-//            tags.get(i).setVoice(voices.get(0));
             int buffer = AudioMaster.loadSound(createTTSTag(_tags.get(key).get(i)));
             bufferList.add(buffer);
             final Source source = new Source();
             source.setBuffer(buffer);
-
-            //source.setPitch((float) 0.8);
-
             //the center source, special position(with y)
             if (i % 2 == 1) {
                 source.setPosition((float) (-20 + (i * xInc)), 10, 0);
             } else {
                 source.setPosition((float) (-20 + (i * xInc)), 0, 0);
             }
-
-//            System.out.println("x : " + (float) (-20 + (i * xInc)));
-//            System.out.println("y : " + (float) (0 + (i * yInc)));
             source.setLooping(true);
             sourceList.add(source);
 
@@ -211,7 +205,6 @@ public class SoundUtil {
      * @param tag
      */
     public static AudioInputStream createTTSTag(Tag tag) {
-
         TextToSpeech tts = new TextToSpeech(); // idea : load it one time on the load of the app because its take a lot of time ;
         tts.setVoice(tag.getVoice());
         return tts.createAudioInputStream(tag.getContent());
@@ -221,7 +214,6 @@ public class SoundUtil {
         if (voices == null) {
             initVoices();
         }
-
         return voices;
     }
 
@@ -232,7 +224,6 @@ public class SoundUtil {
         if (navSource != null) {
             navSource.stop();
         }
-        //
         curNav = ++curNav % _tags.size();
         navTag = new Tag((String) (_tags.keySet().toArray()[curNav]), (String) (_tags.keySet().toArray()[curNav]), Type.TEXT);
         navTag.setVoice(voices.get(0));
@@ -250,17 +241,13 @@ public class SoundUtil {
         bufferList = new ArrayList<>();
         double xInc = 40.000 / 2;
         double yInc = 20.0 / 3.0;
-
         //init the voices
         initVoices();
 
         for (int i = 0; i < _tags.keySet().size(); i++) {
-
             mMainNavTags = createMainNavTagsFromKeys(_tags.keySet());
             //warning will fall if more than 2 nav option
             mMainNavTags.get(i).setVoice(voices.get(i + 3));
-//            _tags.get(curNav).get(i).setVoice(voices.get(i+2));
-//            tags.get(i).setVoice(voices.get(0));
             int buffer = AudioMaster.loadSound(createTTSTag(mMainNavTags.get(i)));
             bufferList.add(buffer);
             final Source source = new Source();
@@ -271,16 +258,10 @@ public class SoundUtil {
             } else {
                 source.setPosition((float) (-20 + (i * xInc)), 0, 0);
             }
-
-//            System.out.println("x : " + (float) (-20 + (i * xInc)));
-//            System.out.println("y : " + (float) (0 + (i * yInc)));
             source.setLooping(true);
             sourceList.add(source);
-
         }
         mCurrentTag = 0;
-
-
     }
 
     private static ArrayList<Tag> createMainNavTagsFromKeys(Set<String> strings) {
@@ -326,7 +307,6 @@ public class SoundUtil {
             articleMap.clear();
         articleMap = WebUtil.getVoxArticle();
         StopAllPrevSources();
-        initVoices();
         Tag articleTag = articleMap.get("article").get(0);
         //set voice to article tag -> idea: lets chose the best voice not random , and if we going to pronounce the headlines than maybe 2 source with to different voices
         articleTag.setVoice(getVoices().get(4));
@@ -343,5 +323,34 @@ public class SoundUtil {
                 ) {
             source.setPitch(newSpeed);
         }
+    }
+
+    /**
+     * load the sub
+     */
+    public static void createAndUpdateSubNavSources() {
+        if (subNavMap.keySet().size() > 0)
+            subNavMap.clear();
+        subNavMap = WebUtil.getVoxSubNav();
+        mkey = "Sub Navigation";
+        _tags.put(mkey, subNavMap.get("HeadLine"));
+        StopAllPrevSources();
+        double xInc = 40.000 / 2;
+        for (int i = 0; i < 3; i++) {
+            subNavMap.get("HeadLine").get(i).setVoice(voices.get(i + 2));
+            int buffer = AudioMaster.loadSound(createTTSTag(subNavMap.get("HeadLine").get(i)));
+            bufferList.add(buffer);
+            final Source source = new Source();
+            source.setBuffer(buffer);
+            //the center source, special position(with y)
+            if (i % 2 == 1) {
+                source.setPosition((float) (-20 + (i * xInc)), 10, 0);
+            } else {
+                source.setPosition((float) (-20 + (i * xInc)), 0, 0);
+            }
+            source.setLooping(true);
+            sourceList.add(source);
+        }
+        mCurrentTag = 0;
     }
 }

@@ -12,6 +12,7 @@ import Utils.WebUtil;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.security.Timestamp;
 
 /**
  * Created by shaha on 05/01/2018.
@@ -24,6 +25,7 @@ public class MainFrame extends JFrame {
     private JPanel jPanel;
     private boolean mMouseMoveDetection;
     private boolean mainNavMode;
+    private boolean subNavMode;
     private boolean articleMode;
     private int currentMap;
 
@@ -37,6 +39,7 @@ public class MainFrame extends JFrame {
         setVisible(true);
         mainNavMode = false;
         articleMode = false;
+        subNavMode = false;
 
     }
 
@@ -133,8 +136,6 @@ public class MainFrame extends JFrame {
 
             private float getFirstSourceNewVolume(float dX, float dY) {
                 float ans = 1 - (dX / frameMaxWidth);
-//                if (dX>=(frameMaxWidth*(3/8)))
-//                    ans=0;
                 System.out.println("New V1 : " + ans);
                 return ans;
             }
@@ -189,6 +190,22 @@ public class MainFrame extends JFrame {
                 case KeyEvent.VK_ENTER:
                     SoundUtil.createSources(0);
                     break;
+                case KeyEvent.VK_B:
+                    //after press B i wont to come back from an article to the headline reading from the sub navigation to main navigation.
+                    //idea : long press on B will automatically go back to Main Navigation
+                    float time = 0;
+                    if (subNavMode) {
+                        subNavMode = false;
+                        mainNavMode = true;
+                        SoundUtil.createMainNavSource();
+                        SoundUtil.playTags();
+                    } else if (articleMode) {
+                        articleMode = false;
+                        SoundUtil.rotateRight();
+                        SoundUtil.rotateLeft();
+                        SoundUtil.playTags();
+                    }
+
             }
             keyIsPressed = true;
         }
@@ -209,13 +226,18 @@ public class MainFrame extends JFrame {
             currentMap = keyPress - 1;
         } else { // in vox case i am in headline list or in navigation list and press to enter to an article or sub navigation;
             if (SoundUtil.getMkey().equals("HeadLine")) {
+                articleMode = true;
                 App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
                 WebUtil.connectToWebsite(App.URL_LINK);
                 SoundUtil.createAndUpdateOneSourceArticle();
-                SoundUtil.playTags();
-                articleMode = true;
-                mMouseMoveDetection = true;
+            } else if (SoundUtil.getMkey().equals("Main Navigation")) {
+                subNavMode = true;
+                App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
+                WebUtil.connectToWebsite(App.URL_LINK);
+                SoundUtil.createAndUpdateSubNavSources();
             }
+            SoundUtil.playTags();
+            mMouseMoveDetection = true;
         }
     }
 
