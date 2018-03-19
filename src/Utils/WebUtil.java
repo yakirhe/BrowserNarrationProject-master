@@ -61,7 +61,7 @@ public class WebUtil {
         Map<String, ArrayList<Tag>> navsDictionary = getNavMap();
 
         //2. get all the articles from the first site
-        Map<String, ArrayList<Tag>> sectionsDictionary = getSections();
+//        Map<String, ArrayList<Tag>> sectionsDictionary = getSections();
 
         //3. unite the navsDictionary and the sections dictionary
 
@@ -80,23 +80,24 @@ public class WebUtil {
         //idea : make sub groups like top stores , newest stores ... check the list that i get and check in som category if its the same layout and i can detect it .
         Map<String, ArrayList<Tag>> headlineMap = getVoxHeadline();
         //Key "article" , value : list of article tag
-        Map<String, ArrayList<Tag>> articleMap= getVoxArticle();
+        Map<String, ArrayList<Tag>> articleMap = getVoxArticle();
         //return union
-        Map<String , ArrayList<Tag>> items = unionMap(navsMap , headlineMap , articleMap);
+        Map<String, ArrayList<Tag>> items = unionMap(navsMap, headlineMap, articleMap);
         return items;
     }
 
     /**
      * return the union off all the items in the page including the navs , headline , articles
+     *
      * @param navsMap
      * @param headlineMap
      * @param articleMap
      * @return union of all the maps
      */
-    private static Map<String,ArrayList<Tag>> unionMap(Map<String, ArrayList<Tag>> navsMap, Map<String, ArrayList<Tag>> headlineMap, Map<String, ArrayList<Tag>> articleMap) {
-        Map<String , ArrayList<Tag>> union  = new HashMap<>(navsMap);
+    private static Map<String, ArrayList<Tag>> unionMap(Map<String, ArrayList<Tag>> navsMap, Map<String, ArrayList<Tag>> headlineMap, Map<String, ArrayList<Tag>> articleMap) {
+        Map<String, ArrayList<Tag>> union = new HashMap<>(navsMap);
         union.putAll(headlineMap);
-    //    union.putAll(articleMap);
+        //    union.putAll(articleMap);
         return union;
     }
 
@@ -117,19 +118,14 @@ public class WebUtil {
             Tag tag = new Tag(tagName, tagName, Type.HEADLINE);
             tag.setUrl(tagUrl);
             try {
-                if (tag.getName() != null && !tag.getName().equals("") && tag.getContent() != null && !tag.getContent().equals("") )
-                headlines.add(tag);
+                if (tag.getName() != null && !tag.getName().equals("") && tag.getContent() != null && !tag.getContent().equals(""))
+                    headlines.add(tag);
             } catch (Error error) {
                 System.out.println(error.getMessage());
             }
         }
         headlineMap.put("HeadLine", headlines);
         return headlineMap;
-    }
-
-    private static Map<String, ArrayList<Tag>> getVoxArticle() {
-        Map<String, ArrayList<Tag>> articleMap = new HashMap<>();
-        return articleMap;
     }
 
     /**
@@ -192,24 +188,6 @@ public class WebUtil {
         return tags;
     }
 
-    private static Map<String, ArrayList<Tag>> getSections() {
-        Map<String, ArrayList<Tag>> sectionsDictionary = new HashMap<>();
-        ArrayList<Tag> linksSection = new ArrayList<>();
-        String sectionName = "";
-        Elements section = doc.getElementsByTag("section");
-        //remove the sections that have sections as child
-        for (int i = 0; i < section.size(); i++) {
-            if (section.select("section").get(i).select("section").size() > 1) {
-                section.remove(i);
-            } else {
-
-            }
-        }
-        //
-        String x = "";
-        return null;
-    }
-
     private static Map<String, ArrayList<Tag>> getNavMap() {
         Map<String, ArrayList<Tag>> navsDictionary = new HashMap<>();
 
@@ -261,5 +239,55 @@ public class WebUtil {
         }
 
         return union;
+    }
+
+    /**
+     * update the sub articles Map(key->map , value -> list contain one article tag)
+     */
+    public static HashMap<String, ArrayList<Tag>> getVoxArticle() {
+        HashMap<String, ArrayList<Tag>> map = new HashMap<>();
+        ArrayList<Tag> tags = new ArrayList<>();
+        String mainHeadLineText = "";
+        String subHeadLineText = "";
+        String mainContentText = "";
+        //idea : do i wont to read the head line and sub head line ? i extract and make a simple function that make example but i dont use it
+        Elements mainHeadline = doc.getElementsByTag("h1");
+        for (Element element : mainHeadline
+                ) {
+            mainHeadLineText = element.text();
+        }
+        Element subHeadline = doc.select("h2").first();
+        subHeadLineText = subHeadline.text();
+        Elements contentElements = doc.getElementsByClass("c-entry-content");
+        for (Element element : contentElements
+                ) {
+            for (Element element1 : element.children()
+                    ) {
+                if (element1.tagName().equals("p") || element1.tagName().equals("blockquote"))
+                    mainContentText += " " + element1.text();
+            }
+        }
+        //see idea
+        Tag tag1 = getArticleTag(mainHeadLineText, subHeadLineText, mainContentText);
+        Tag tag2 = new Tag("article", mainContentText, Type.ARTICLE);
+        tag2.setUrl(App.URL_LINK);
+        tags.add(tag2);
+        map.put("article", tags);
+        return map;
+    }
+
+    /**
+     * make a tag witch attention to the headline and the sub headline
+     *
+     * @param mainHeadLineText
+     * @param subHeadLineText
+     * @param mainContentText
+     * @return
+     */
+    private static Tag getArticleTag(String mainHeadLineText, String subHeadLineText, String mainContentText) {
+        String content = " article main headline : " + mainHeadLineText + "article sub headline : " + subHeadLineText + "article main content : " + mainContentText;
+        Tag tag = new Tag("article", content, Type.ARTICLE);
+        tag.setUrl(App.URL_LINK);
+        return tag;
     }
 }

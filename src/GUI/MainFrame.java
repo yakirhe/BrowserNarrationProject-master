@@ -6,6 +6,8 @@ import javax.swing.*;
 
 import App.*;
 import Utils.SoundUtil;
+import Utils.Tag;
+import Utils.WebUtil;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -22,6 +24,7 @@ public class MainFrame extends JFrame {
     private JPanel jPanel;
     private boolean mMouseMoveDetection;
     private boolean mainNavMode;
+    private boolean articleMode;
     private int currentMap;
 
 
@@ -33,6 +36,7 @@ public class MainFrame extends JFrame {
         this.add(jPanel);
         setVisible(true);
         mainNavMode = false;
+        articleMode = false;
 
     }
 
@@ -51,21 +55,50 @@ public class MainFrame extends JFrame {
 
             @Override
             public void mouseMoved(MouseEvent e) {
+                // use this site to help : https://mycurvefit.com/
                 if (MouseMoveDetection()) {
                     float dX = e.getX();
                     float dY = e.getY();
                     System.out.println("X : " + dX);
                     System.out.println("Y : " + dY);
-                    //check if needed to make a make quit zone around the mid source.
-                    //pro : better sound of the mid source.
-                    //con : in the start we wont all 3 sentence to be heard simultaneity
-                    //idea: in the zone silence v1+v3 in half (0.25f)
-                    float newVolume1 = getFirstSourceNewVolume(dX, dY);
-                    float newVolume2 = getSecondSourceNewVolume(dX, dY);
-                    float newVolume3 = getThirdSourceNewVolume(dX, dY);
-                    setNewVolumeToSources(newVolume1, newVolume2, newVolume3);
+                    if (articleMode) {
+                        //will make the read X1.5 if most right or 0.5 if most left normal X1 -> idea : make it more exponential   lets say if(<0.3 || >0.7) than double by 2
+                        // also can use this equation y = 2746680 + (0.7730038 - 2746680)/(1 + (x/11.82128)^5.424924) -> not need to add 0.5
+                        float newSpeed = (float) (0.5 + (dX / frameMaxWidth));
+                        //lock at idea
+                        float newSpeed2 = getNewSpeed(dX);
+                        setNewSpeedToSources(newSpeed2);
+                        System.out.println("New Speed : " + newSpeed);
+                        System.out.println("New Speed2 : " + newSpeed2);
+
+
+                    } else {
+                        //check if needed to make a make quit zone around the mid source.
+                        //pro : better sound of the mid source.
+                        //con : in the start we wont all 3 sentence to be heard simultaneity
+                        //idea: in the zone silence v1+v3 in half (0.25f)
+                        float newVolume1 = getFirstSourceNewVolume(dX, dY);
+                        float newVolume2 = getSecondSourceNewVolume(dX, dY);
+                        float newVolume3 = getThirdSourceNewVolume(dX, dY);
+                        setNewVolumeToSources(newVolume1, newVolume2, newVolume3);
+                    }
+
+
                 }
 
+            }
+
+            private void setNewSpeedToSources(float newSpeed) {
+                SoundUtil.setNewSpeedToSources(newSpeed);
+            }
+
+            private float getNewSpeed(float dX) {
+                float newSpeed = (float) (0.5 + (dX / frameMaxWidth));
+                if (newSpeed > 1.4)
+                    newSpeed = newSpeed * 4;
+                else if (newSpeed < 0.3)
+                    newSpeed = newSpeed / 4;
+                return newSpeed;
             }
 
             /**
@@ -131,7 +164,7 @@ public class MainFrame extends JFrame {
                 case KeyEvent.VK_1:
                     /*
                     if we in main nav mode that key that pressed will enter a require nav list create new sources and buffers from the require list
-                    if we not in main nav mode we will
+                    if we not in main nav mode we will get the new url and load it
                      */
                     createAndPlaySourcesFromKeyPress(1);
                     break;
@@ -163,23 +196,29 @@ public class MainFrame extends JFrame {
 
     /**
      * create the new sound sources load the buffer of the selected item
-     * @param keyPress
      *
+     * @param keyPress
      */
     private void createAndPlaySourcesFromKeyPress(int keyPress) {
-        if (mainNavMode){
+        if (mainNavMode) {
             mainNavMode = false;
-            SoundUtil.createSources(keyPress-1);
-            mMouseMoveDetection=true;
+            SoundUtil.createSources(keyPress - 1);
+            mMouseMoveDetection = true;
             SoundUtil.playTags();
             mainNavMode = false;
-            currentMap = keyPress-1;
-        }else{
-            SoundUtil.rotateLeft();
-            SoundUtil.updateSources();
-            SoundUtil.playTags();
+            currentMap = keyPress - 1;
+        } else { // in vox case i am in headline list or in navigation list and press to enter to an article or sub navigation;
+            if (SoundUtil.getMkey().equals("HeadLine")) {
+                App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
+                WebUtil.connectToWebsite(App.URL_LINK);
+                SoundUtil.createAndUpdateOneSourceArticle();
+                SoundUtil.playTags();
+                articleMode = true;
+                mMouseMoveDetection = true;
+            }
         }
     }
+
 
     public void keyReleased(KeyEvent e) {
         System.out.println("Released a key " + e.getKeyChar());
