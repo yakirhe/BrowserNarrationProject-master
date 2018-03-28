@@ -73,12 +73,12 @@ public class WebUtil {
      * @return dictionary that contains list of nav tags , article , headline
      */
     public static Map<String, ArrayList<Tag>> getVoxItems() {
-        //Key : nav type  , value : list of nav tag
+        //UserInput : nav type  , value : list of nav tag
         Map<String, ArrayList<Tag>> navsMap = getVoxNavMap("Main Navigation");
-        //Key "headline" , value : list of article headline
+        //UserInput "headline" , value : list of article headline
         //idea : make sub groups like top stores , newest stores ... check the list that i get and check in som category if its the same layout and i can detect it .
         Map<String, ArrayList<Tag>> headlineMap = getVoxHeadline();
-        //Key "article" , value : list of article tag
+        //UserInput "article" , value : list of article tag
         Map<String, ArrayList<Tag>> articleMap = getVoxArticle();
         //return union
         Map<String, ArrayList<Tag>> items = unionMap(navsMap, headlineMap, articleMap);

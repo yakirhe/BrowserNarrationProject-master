@@ -29,16 +29,24 @@ public class App {
     public static AudioInputStream ais;
 
     public static void main(String[] args) {
-        System.out.println("Connecting to " + URL_LINK);
-        //1. connect to the web
-        WebUtil.connectToWebsite(URL_LINK);
+        //1. create an engine
+        Engine app = new Engine();
+        //2. start the engine
+        app.start();
 
-        //init voices
-        SoundUtil.initVoices();
+
+
+
+//        System.out.println("Connecting to " + URL_LINK);
+//        //1. connect to the web
+//        WebUtil.connectToWebsite(URL_LINK);
+//
+//        //init voices
+//        SoundUtil.initVoices();
         //2. extract the tags from the web
 
         //test vox - daniel
-        testVox();
+        //testVox();
         /*
         Map<String,ArrayList<Tag>> navsDictionary = WebUtil.getItems();
         HashMap<String,ArrayList<Tag>> navsDict = (HashMap<String, ArrayList<Tag>>) navsDictionary;
@@ -74,7 +82,7 @@ public class App {
         AudioMaster.init();
         AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
         MainFrame app = new MainFrame();
-        app.init();
+        //app.init();
     }
 
     private static void testTags(ArrayList<String> tags) {
