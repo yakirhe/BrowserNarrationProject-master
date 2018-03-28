@@ -1,7 +1,6 @@
 package Utils;
 
 import App.App;
-import org.apache.commons.collections.map.HashedMap;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
