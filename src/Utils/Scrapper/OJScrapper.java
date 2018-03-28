@@ -9,6 +9,11 @@ import java.util.List;
  */
 public class OJScrapper implements IScrapper {
     private final String URL = "http://edition.cnn.com/US/OJ/";
+
+    public OJScrapper(){
+        super();
+    }
+
     @Override
     public List<Tag> getArticles() {
         return null;

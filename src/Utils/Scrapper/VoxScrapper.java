@@ -9,8 +9,9 @@ import java.util.List;
  */
 public class VoxScrapper implements IScrapper {
     private final String URL = "https://www.vox.com/";
-    public VoxScrapper(){
 
+    public VoxScrapper(){
+        super();
     }
 
     @Override

@@ -7,6 +7,7 @@ package Utils;
  */
 public class WebViewer {
     public WebViewer(){
+        //set the selenium
         System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
     }
 }

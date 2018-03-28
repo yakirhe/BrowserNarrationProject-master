@@ -9,8 +9,9 @@ import java.util.List;
  */
 public class SkySportsScrapper implements IScrapper {
     private final String URL = "http://www.skysports.com/";
-    public SkySportsScrapper(){
 
+    public SkySportsScrapper(){
+        super();
     }
 
     @Override
