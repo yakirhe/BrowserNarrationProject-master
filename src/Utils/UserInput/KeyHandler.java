@@ -1,4 +1,4 @@
-package Utils.Keys;
+package Utils.UserInput;
 
 import GUI.MainFrame;
 

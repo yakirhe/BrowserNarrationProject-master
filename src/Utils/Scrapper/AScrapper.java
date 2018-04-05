@@ -1,9 +1,15 @@
 package Utils.Scrapper;
 
+import App.App;
 import Utils.Tag;
+import Utils.Type;
 import Utils.WebViewer;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by shaha on 28/03/2018.
@@ -11,9 +17,16 @@ import java.util.List;
  * Here we do all the common logic and initialization to our scrappers
  */
 public abstract class AScrapper implements IScrapper {
+    private final WebViewer webViewer;
+    protected Element doc;
+
     public AScrapper(){
         //create a selenium instance
-        WebViewer webViewer = new WebViewer();
+        webViewer = new WebViewer();
+    }
+
+    protected void openWebsite(String url){
+        webViewer.openWebsite(url);
     }
 
     @Override
@@ -22,4 +35,33 @@ public abstract class AScrapper implements IScrapper {
     @Override
     public abstract List<Tag> getMenus();
 
+    public abstract Map<String,List<Tag>> getItems();
+
+    /** an helper method
+     * get nav element and extract list of tags
+     *
+     * @param navs
+     * @return list of the menu tags
+     */
+    protected List<Tag> extractNavElements(Elements navs) {
+        ArrayList<Tag> tags = new ArrayList<>();
+        for (Element link : navs) {
+            String linkText = link.text();
+
+            //Trim the text
+            linkText = linkText.replaceAll("[^A-Za-z0-9 ]", "");
+            linkText = linkText.trim();
+
+            if (!linkText.equals("")) {
+                //get the href
+                String href = link.getElementsByTag("a").attr("href");
+                href = App.URL_LINK + href;
+
+                Tag tag = new Tag(linkText, linkText, Type.LINK);
+                tag.setUrl(href);
+                tags.add(tag);
+            }
+        }
+        return tags;
+    }
 }

@@ -1,6 +1,8 @@
 package App;
 
 import GUI.MainFrame;
+import Utils.Scrapper.AScrapper;
+import Utils.SoundUtil;
 
 import java.util.Scanner;
 
@@ -26,11 +28,13 @@ public class Engine {
      */
     public void start() {
         //open the GUI window
-        mainFrame = new MainFrame();
+        mainFrame = new MainFrame(this);
         //1. play the instructions
         playInstructions();
         //2. display the options and get the user input
         selectOption();
+        //3. init voices
+        SoundUtil.initVoices();
     }
 
     private void selectOption() {
@@ -42,5 +46,13 @@ public class Engine {
         //play the wav file of the instructions
         System.out.println("---------------------------------------");
         System.out.println("-------------Instructions--------------");
+    }
+
+    /**
+     * This function calls the scrapper and tells him to scrape all the required details that we need
+     * @param scrapper
+     */
+    public void startScrapping(AScrapper scrapper) {
+        scrapper.getItems();
     }
 }

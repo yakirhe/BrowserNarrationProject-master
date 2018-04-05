@@ -1,13 +1,10 @@
 package GUI;
 
-import Utils.Keys.KeyHandler;
+import App.Engine;
+import Utils.Scrapper.*;
+import Utils.UserInput.KeyHandler;
 
 import javax.swing.*;
-
-import Utils.Scrapper.IScrapper;
-import Utils.Scrapper.OJScrapper;
-import Utils.Scrapper.SkySportsScrapper;
-import Utils.Scrapper.VoxScrapper;
 
 /**
  * Created by shaha on 05/01/2018.
@@ -16,6 +13,8 @@ public class MainFrame extends JFrame {
     private final String TITLE = "3D Narration for web browser";
     private JPanel mainPanel;
     private KeyHandler.KeyHandlerSelection keyListener;
+    private Engine engine;
+
     private boolean keyIsPressed;
     private boolean mMouseMoveDetection;
     private boolean mainNavMode;
@@ -24,14 +23,19 @@ public class MainFrame extends JFrame {
     private int currentMap;
 
 
-    public MainFrame() {
+    public MainFrame(Engine engine) {
         setTitle(TITLE);
+
+        //save the engine instance
+        this.engine = engine;
+
         //Open the window on full screen
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
         //create the mainPanel
         mainPanel = new JPanel();
         add(mainPanel);
+
 //        mMouseMoveDetection = false;
 //        this.add(jPanel);
 //        mainNavMode = false;
@@ -49,9 +53,9 @@ public class MainFrame extends JFrame {
 
         //Visual presentation of the options
         JLabel label = new JLabel("<html>For the OJ Simpson site press 1 <br>" +
-        "For Vox news site press 2 <br>" +
-        "For sky sports site press 3 <br>" +
-        "To repeat the options press 4</html>");
+                "For Vox news site press 2 <br>" +
+                "For sky sports site press 3 <br>" +
+                "To repeat the options press 4</html>");
         mainPanel.add(label);
 
         //update the gui
@@ -65,13 +69,14 @@ public class MainFrame extends JFrame {
 
     /**
      * This function determine which scrapper to use
+     *
      * @param option 1 - OJ Simpson website
      *               2 - VOX website
      *               3 - SkySports website
      */
     public void setScrapper(char option) {
-        IScrapper scrapper;
-        switch (option){
+        AScrapper scrapper = null;
+        switch (option) {
             case '1':
                 //create new oj scrapper
                 scrapper = new OJScrapper();
@@ -83,6 +88,8 @@ public class MainFrame extends JFrame {
                 scrapper = new SkySportsScrapper();
                 break;
         }
+
+        engine.startScrapping(scrapper);
     }
 
 //    /**

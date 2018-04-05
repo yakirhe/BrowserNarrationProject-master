@@ -81,7 +81,7 @@ public class App {
         SoundUtil.setDictionaryTags(itemsDict);
         AudioMaster.init();
         AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
-        MainFrame app = new MainFrame();
+        //MainFrame app = new MainFrame();
         //app.init();
     }
 
