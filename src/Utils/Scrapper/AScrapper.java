@@ -4,6 +4,7 @@ import App.App;
 import Utils.Tag;
 import Utils.Type;
 import Utils.WebViewer;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -27,6 +28,12 @@ public abstract class AScrapper implements IScrapper {
 
     protected void openWebsite(String url){
         webViewer.openWebsite(url);
+        try {
+            //load doc
+            doc = Jsoup.connect(url).get();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="109dd855-6ba9-47b8-a900-30e6ada16b59" name="Default" comment="new structure">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Keys/KeyHandler$KeyHandlerSelection.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Keys/KeyHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/UserInput/dfs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/dfksjfs.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/myproject/hey.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/sfgfg.class" afterPath="" />
+    <list default="true" id="109dd855-6ba9-47b8-a900-30e6ada16b59" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/App.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/App.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Engine.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Engine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/GUI/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/GUI/MainFrame.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/AScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/AScrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/IScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/IScrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/OJScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/OJScrapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/SkySportsScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/SkySportsScrapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/VoxScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/VoxScrapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/SoundUtil.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/SoundUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/WebViewer.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/WebViewer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/App.java" afterPath="$PROJECT_DIR$/src/App/App.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/Engine.java" afterPath="$PROJECT_DIR$/src/App/Engine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MainFrame.java" afterPath="$PROJECT_DIR$/src/GUI/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Scrapper/IScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/IScrapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/UserInput/KeyHandler.java" afterPath="$PROJECT_DIR$/src/Utils/UserInput/KeyHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/WebViewer.java" afterPath="$PROJECT_DIR$/src/Utils/WebViewer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/SoundUtil.java" afterPath="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,8 +31,8 @@
       <file leaf-file-name="WebUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/WebUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="808">
-              <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+            <state relative-caret-position="1638">
+              <caret line="89" column="6" lean-forward="false" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,12 +43,10 @@
       <file leaf-file-name="Engine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="1071">
+              <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1458#1459#0" expanded="true" />
-                <element signature="e#1493#1494#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,10 +55,23 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1827">
-              <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+            <state relative-caret-position="3927">
+              <caret line="191" column="2" lean-forward="false" selection-start-line="191" selection-start-column="2" selection-end-line="191" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SoundUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3402">
+              <caret line="175" column="31" lean-forward="false" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+              <folding>
+                <element signature="e#1068#1069#0" expanded="true" />
+                <element signature="e#1096#1097#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,10 +80,10 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+            <state relative-caret-position="1428">
+              <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
               <folding>
-                <marker date="1522251231875" expanded="true" signature="2638:2644" ph="{...}" />
+                <marker date="1523297878573" expanded="true" signature="2654:2662" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -93,8 +92,8 @@
       <file leaf-file-name="AScrapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+            <state relative-caret-position="21">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,10 +103,10 @@
         <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="483">
-              <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#546#547#0" expanded="true" />
+                <element signature="e#573#574#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,8 +127,18 @@
       <file leaf-file-name="VoxScrapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+            <state relative-caret-position="808">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OJScrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -163,7 +172,6 @@
         <option value="$PROJECT_DIR$/src/App/AudioMaster.java" />
         <option value="$PROJECT_DIR$/src/App/WaveData.java" />
         <option value="$PROJECT_DIR$/src/Utils/AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
         <option value="$PROJECT_DIR$/src/Utils/Tag.java" />
         <option value="$PROJECT_DIR$/src/Utils/WebUtil.java" />
         <option value="$PROJECT_DIR$/src/Utils/Keys/KeyInput.java" />
@@ -172,15 +180,16 @@
         <option value="$PROJECT_DIR$/src/Utils/UserInput/dfs.java" />
         <option value="$PROJECT_DIR$/src/Utils/myproject/hey.java" />
         <option value="$PROJECT_DIR$/src/Utils/UserInput/KeyHandler.java" />
-        <option value="$PROJECT_DIR$/src/App/App.java" />
         <option value="$PROJECT_DIR$/src/GUI/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/Utils/WebViewer.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Scrapper/IScrapper.java" />
         <option value="$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java" />
         <option value="$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java" />
-        <option value="$PROJECT_DIR$/src/Utils/WebViewer.java" />
-        <option value="$PROJECT_DIR$/src/App/Engine.java" />
-        <option value="$PROJECT_DIR$/src/Utils/Scrapper/IScrapper.java" />
         <option value="$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java" />
         <option value="$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java" />
+        <option value="$PROJECT_DIR$/src/App/Engine.java" />
+        <option value="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
+        <option value="$PROJECT_DIR$/src/App/App.java" />
       </list>
     </option>
   </component>
@@ -205,6 +214,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -333,7 +343,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -670,7 +679,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522247911472</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="project update vox">
+      <created>1522911067825</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522911067825</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -686,7 +702,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.935236" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.935236" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39626783" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -716,7 +732,8 @@
     <MESSAGE value="update nav" />
     <MESSAGE value="todo" />
     <MESSAGE value="new structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="new structure" />
+    <MESSAGE value="project update vox" />
+    <option name="LAST_COMMIT_MESSAGE" value="project update vox" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -758,11 +775,12 @@
           <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="70" />
+      <option name="time" value="78" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="link.attr(&quot;href&quot;)" language="JAVA" />
+        <watch expression="links.size()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -777,8 +795,6 @@
           <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -798,8 +814,8 @@
         <state relative-caret-position="462">
           <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding>
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,7 +825,7 @@
         <state relative-caret-position="693">
           <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -819,7 +835,7 @@
         <state relative-caret-position="1407">
           <caret line="78" column="59" lean-forward="false" selection-start-line="78" selection-start-column="59" selection-end-line="78" selection-end-column="59" />
           <folding>
-            <marker date="1522251231875" expanded="true" signature="2638:2644" ph="{...}" />
+            <marker date="1523297878573" expanded="true" signature="2654:2662" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -846,10 +862,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +889,7 @@
         <state relative-caret-position="399">
           <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="76" />
           <folding>
-            <marker date="1522251231875" expanded="true" signature="2638:2644" ph="{...}" />
+            <marker date="1523297878573" expanded="true" signature="2654:2662" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -886,8 +899,8 @@
         <state relative-caret-position="3045">
           <caret line="145" column="6" lean-forward="true" selection-start-line="145" selection-start-column="6" selection-end-line="145" selection-end-column="6" />
           <folding>
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -904,6 +917,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1176">
           <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -929,6 +943,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="819">
           <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,7 +970,7 @@
         <state relative-caret-position="315">
           <caret line="19" column="55" lean-forward="true" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
           <folding>
-            <marker date="1522251231875" expanded="true" signature="2638:2644" ph="{...}" />
+            <marker date="1523297878573" expanded="true" signature="2654:2662" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1041,13 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="51" column="47" lean-forward="false" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/WaveData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2524">
@@ -1062,27 +1070,6 @@
     <entry file="file://$PROJECT_DIR$/src/Utils/sfgfg.java" />
     <entry file="file://$PROJECT_DIR$/src/Utils/myproject/hey.java" />
     <entry file="file://$PROJECT_DIR$/src/Utils/dfksjfs.java" />
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#549#550#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="91" column="20" lean-forward="false" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/WebViewer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
@@ -1093,56 +1080,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="34" column="23" lean-forward="false" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1458#1459#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="21" lean-forward="false" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#1086#1087#0" expanded="true" />
-            <element signature="e#1114#1115#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/UserInput/KeyHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="33" column="24" lean-forward="false" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="78" column="55" lean-forward="true" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
-          <folding>
-            <marker date="1522251231875" expanded="true" signature="2638:2644" ph="{...}" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1155,28 +1098,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java">
+    <entry file="file://$PROJECT_DIR$/src/Utils/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        <state relative-caret-position="336">
+          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#573#574#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/WebUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="113" column="9" lean-forward="true" selection-start-line="113" selection-start-column="9" selection-end-line="113" selection-end-column="9" />
+        <state relative-caret-position="1638">
+          <caret line="89" column="6" lean-forward="false" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="58" column="26" lean-forward="false" selection-start-line="58" selection-start-column="26" selection-end-line="58" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3402">
+          <caret line="175" column="31" lean-forward="false" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
+          <folding>
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1096#1097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3927">
+          <caret line="191" column="2" lean-forward="false" selection-start-line="191" selection-start-column="2" selection-end-line="191" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="79" column="9" lean-forward="false" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+          <folding>
+            <marker date="1523297878573" expanded="true" signature="2654:2662" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="70" column="34" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="70" selection-end-column="34" />
+        <state relative-caret-position="808">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>

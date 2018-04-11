@@ -3,8 +3,9 @@ package App;
 import GUI.MainFrame;
 import Utils.Scrapper.AScrapper;
 import Utils.SoundUtil;
+import Utils.Tag;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by shaha on 28/03/2018.
@@ -13,6 +14,7 @@ import java.util.Scanner;
  * activate them in a logical order
  */
 public class Engine {
+    private static final float LISTENER_POS_X = 0, LISTENER_POS_Y = 0, LISTENER_POS_Z = 0;
     private MainFrame mainFrame;
 
     /**
@@ -53,6 +55,9 @@ public class Engine {
      * @param scrapper
      */
     public void startScrapping(AScrapper scrapper) {
-        scrapper.getItems();
+        Map<String,List<Tag>> items = scrapper.getItems();
+        SoundUtil.setDictionaryTags(items);
+        AudioMaster.init();
+        AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
     }
 }

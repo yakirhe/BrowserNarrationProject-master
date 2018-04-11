@@ -75,15 +75,15 @@ public class App {
 
     }
 
-    private static void testVox() {
-        Map<String,ArrayList<Tag>> items = WebUtil.getVoxItems();
-        HashMap<String,ArrayList<Tag>> itemsDict = (HashMap<String, ArrayList<Tag>>) items; // WHY ??
-        SoundUtil.setDictionaryTags(itemsDict);
-        AudioMaster.init();
-        AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
-        //MainFrame app = new MainFrame();
-        //app.init();
-    }
+//    private static void testVox() {
+//        Map<String,ArrayList<Tag>> items = WebUtil.getVoxItems();
+//        HashMap<String,ArrayList<Tag>> itemsDict = (HashMap<String, ArrayList<Tag>>) items; // WHY ??
+//        SoundUtil.setDictionaryTags(itemsDict);
+//        AudioMaster.init();
+//        AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
+//        //MainFrame app = new MainFrame();
+//        //app.init();
+//    }
 
     private static void testTags(ArrayList<String> tags) {
         for (String tag : tags) {

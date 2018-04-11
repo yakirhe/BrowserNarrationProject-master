@@ -22,7 +22,7 @@ public class SkySportsScrapper extends AScrapper {
     }
 
     @Override
-    public Map<String, List<Tag>> getMenus() {
+    public List<Tag> getMenus() {
         return null;
     }
 

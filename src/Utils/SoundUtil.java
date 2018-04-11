@@ -13,7 +13,7 @@ public class SoundUtil {
     private static ArrayList<Source> sourceList;
     public static boolean isReady = false;
     private static int mCurrentTag;
-    private static HashMap<String, ArrayList<Tag>> _tags = new HashMap<>();
+    private static Map<String, List<Tag>> _tags = new HashMap<>();
     private static HashMap<String, ArrayList<Tag>> articleMap = new HashMap<>();
     private static HashMap<String, ArrayList<Tag>> subNavMap = new HashMap<>();
     private static Integer navBuffer;
@@ -32,7 +32,7 @@ public class SoundUtil {
 
     private static String mkey;
 
-    public static void setDictionaryTags(HashMap<String, ArrayList<Tag>> tags) {
+    public static void setDictionaryTags(Map<String, List<Tag>> tags) {
         _tags = tags;
     }
 
