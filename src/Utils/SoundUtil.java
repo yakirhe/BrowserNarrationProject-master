@@ -111,7 +111,7 @@ public class SoundUtil {
         sourceList.add(source3);
     }
 
-    private static void StopAllPrevSources() {
+    public static void StopAllPrevSources(){
         if (sourceList == null) {
             return;
         }
@@ -120,6 +120,8 @@ public class SoundUtil {
             source.stop();
         }
     }
+
+
 
     public static void playTags() {
         //clean the sources
@@ -245,7 +247,7 @@ public class SoundUtil {
                 ArrayList<String> keyList = new ArrayList<>(_tags.keySet());
                 for (int i = 0; i < _tags.size(); i++) {
                     String tag = keyList.get(i);
-                    int buffer = AudioMaster.loadSound(createTTSString(tag, 3 + i));
+                    int buffer = AudioMaster.loadSound(createTTSString(tag, 2 + i));
                     sourceList.get(i).setBuffer(buffer);
                 }
                 break;

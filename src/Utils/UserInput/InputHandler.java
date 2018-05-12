@@ -92,7 +92,9 @@ public class InputHandler {
                     SoundUtil.playTags();
                     break;
                 case KeyEvent.VK_BACK_SPACE:
-                    playMenu();
+                    play = false;
+                    SoundUtil.StopAllPrevSources();
+                    App.app.start(false);
                     break;
             }
         }
@@ -139,6 +141,7 @@ public class InputHandler {
                         case HEADLINE:
                             ArrayList<Tag> article = (ArrayList<Tag>) Engine.getaScrapper().getArticles();
                             SoundUtil.setmTagsList(article);
+                            SoundUtil.StopAllPrevSources();
                             SoundUtil.initBuffers(NarrationMode.ARTICLE);
                             SoundUtil.playTags();
                             break;

@@ -38,9 +38,11 @@ public class Engine {
      * This function is in charge of all of our logic
      * and the way and order we execute things
      */
-    public void start() {
+    public void start(boolean isFirstPlay) {
         //open the GUI window
-        mainFrame = new MainFrame(this);
+        if(isFirstPlay) {
+            mainFrame = new MainFrame(this);
+        }
         //1. play the instructions
         playInstructions();
         //2. display the options and get the user input

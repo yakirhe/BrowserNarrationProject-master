@@ -27,12 +27,13 @@ public class App {
     public static boolean FIRST_TIME = true;
     public static byte[] BYTES;
     public static AudioInputStream ais;
+    public static Engine app;
 
     public static void main(String[] args) {
         //1. create an engine
-        Engine app = new Engine();
+        app = new Engine();
         //2. start the engine
-        app.start();
+        app.start(true);
 
 
 
