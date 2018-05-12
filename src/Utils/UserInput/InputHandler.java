@@ -158,9 +158,10 @@ public class InputHandler {
             //handle the user
             char c = e.getKeyChar();
             System.out.println("The user pressed " + c); //log for our use
-            if (c == '1' || c == '2' || c == '3') {
+            if (c == '1' || c == '2' || c == '3' || c == '4') {
                 //remove the key listener from the app
                 app.removeSelectionListener();
+                SoundUtil.stopInstruction();
 
                 //set the selected choice to use the appropriate scrapper
                 app.setScrapper(c);

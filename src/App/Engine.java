@@ -52,12 +52,14 @@ public class Engine {
     private void selectOption() {
         //call the GUI function to handle user input
         mainFrame.selectOption();
+
     }
 
     private void playInstructions() {
         //play the wav file of the instructions
         System.out.println("---------------------------------------");
         System.out.println("-------------Instructions--------------");
+        SoundUtil.playInstructions();
     }
 
     /**
