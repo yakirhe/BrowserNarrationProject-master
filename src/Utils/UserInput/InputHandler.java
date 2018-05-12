@@ -107,7 +107,6 @@ public class InputHandler {
         }
 
         private void updateSourcesByKeyPress(int keyPress) {
-
             switch (SoundUtil.getMode()) {
                 case MAIN_NAVIGATION:
                     //update sources and buffers
@@ -127,7 +126,6 @@ public class InputHandler {
                             SoundUtil.setmTagsList(headlines);
                             SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
                             SoundUtil.playTags();
-
                             break;
                         case HEADLINE:
                             ArrayList<Tag> article = (ArrayList<Tag>) Engine.getaScrapper().getArticles();
@@ -140,18 +138,6 @@ public class InputHandler {
                 default:
                     return;
             }
-//            if (SoundUtil.getMkey().equals("HeadLine")) {
-//                App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
-//                WebUtil.connectToWebsite(App.URL_LINK);
-//                SoundUtil.createAndUpdateOneSourceArticle();
-//            } else if (SoundUtil.getMkey().equals("Main Navigation")) {
-//                subNavMode = true;
-//                App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
-//                WebUtil.connectToWebsite(App.URL_LINK);
-//                SoundUtil.createAndUpdateSubNavSources();
-//            }
-//            SoundUtil.playTags();
-//            mMouseMoveDetection = true;
         }
 
         private void menuHandler(KeyEvent e) {
@@ -165,6 +151,9 @@ public class InputHandler {
 
                 //set the selected choice to use the appropriate scrapper
                 app.setScrapper(c);
+            } else if (c == '5') {
+                SoundUtil.stopInstruction();
+                SoundUtil.playInstructions();
             } else {
                 System.out.println("The user have to choose again"); //log for our use
             }

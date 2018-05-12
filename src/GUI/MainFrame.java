@@ -91,6 +91,7 @@ public class MainFrame extends JFrame {
         }
 
         engine.startScrapping(scrapper);
+        SoundUtil.playChoice("startnavigation.wav");
     }
 
     public void setScrapperListener() {

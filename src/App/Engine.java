@@ -52,7 +52,6 @@ public class Engine {
     private void selectOption() {
         //call the GUI function to handle user input
         mainFrame.selectOption();
-
     }
 
     private void playInstructions() {
