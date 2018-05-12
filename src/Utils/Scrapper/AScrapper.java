@@ -26,7 +26,7 @@ public abstract class AScrapper implements IScrapper {
         webViewer = new WebViewer();
     }
 
-    protected void openWebsite(String url){
+    public void openWebsite(String url){
         webViewer.openWebsite(url);
         try {
             //load doc

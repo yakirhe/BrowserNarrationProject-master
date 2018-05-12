@@ -12,7 +12,12 @@ public class SoundUtil {
     private static ArrayList<Integer> bufferList;
     private static ArrayList<Source> sourceList;
     public static boolean isReady = false;
-    private static int mCurrentTag;
+    public static int mCurrentTag;
+
+    public static Map<String, List<Tag>> get_tags() {
+        return _tags;
+    }
+
     private static Map<String, List<Tag>> _tags = new HashMap<>();
     private static HashMap<String, ArrayList<Tag>> articleMap = new HashMap<>();
     private static HashMap<String, ArrayList<Tag>> subNavMap = new HashMap<>();
@@ -20,7 +25,26 @@ public class SoundUtil {
     private static int curNav = -1;
     private static Tag navTag;
     private static Source navSource;
-    private static ArrayList<Tag> mMainNavTags;
+    private static List<Tag> mTagsList;
+
+    public static List<Tag> getmTagsList() {
+        return mTagsList;
+    }
+
+    public static void setmTagsList(List<Tag> mTagsList) {
+        SoundUtil.mTagsList = mTagsList;
+    }
+
+    public static NarrationMode getMode() {
+        return m_mode;
+    }
+
+    public static void setMode(NarrationMode mode) {
+        SoundUtil.m_mode = mode;
+    }
+
+    private static NarrationMode m_mode;
+
 
     public static String getMkey() {
         return mkey;
@@ -55,58 +79,59 @@ public class SoundUtil {
      */
     public static void updateSourcesVolume(float leftSource, float midSource, float rightSource) {
         sourceList.get(0).setVolume(leftSource);
-        sourceList.get(1).setVolume(midSource);
-        sourceList.get(2).setVolume(rightSource);
+        sourceList.get(2).setVolume(midSource);
+        sourceList.get(1).setVolume(rightSource);
     }
 
     /**
      * Create 3 sources that remain permanent!!
      * Only the buffer change
      */
-    public static void createSources(int curnav) {
-        curNav = curnav;
-        String key = getKeyByPlace(curnav);
+    public static void createSources() {
+        sourceList = new ArrayList<Source>();
         StopAllPrevSources();
+
         double xInc = 40.000 / 2;
         double yInc = 20.0 / 3.0;
 
         //init the voices
         initVoices();
 
-        for (int i = 0; i < 3; i++) {
-            if (_tags.size() < i) {
-                return;
-            }
+        initSources();
 
-            _tags.get(key).get(i).setVoice(voices.get(i + 2));
-            int buffer = AudioMaster.loadSound(createTTSTag(_tags.get(key).get(i)));
-            bufferList.add(buffer);
-            final Source source = new Source();
-            source.setBuffer(buffer);
-            //the center source, special position(with y)
-            if (i % 2 == 1) {
-                source.setPosition((float) (-20 + (i * xInc)), 10, 0);
-            } else {
-                source.setPosition((float) (-20 + (i * xInc)), 0, 0);
-            }
-            source.setLooping(true);
-            sourceList.add(source);
-
-        }
         System.out.println("Ready");
+
+        //our current position
         mCurrentTag = 0;
-        isReady = true;
+//        isReady = true;
+    }
+
+    private static void initSources() {
+        final Source source1 = new Source();
+        final Source source2 = new Source();
+        final Source source3 = new Source();
+
+        source1.setPosition(-20, 0, 0);
+        source2.setPosition(20, 0, 0);
+        source3.setPosition(0, 10, 0);
+
+        source1.setLooping(true);
+        source2.setLooping(true);
+        source3.setLooping(true);
+
+        sourceList.add(source1);
+        sourceList.add(source2);
+        sourceList.add(source3);
     }
 
     private static void StopAllPrevSources() {
+        if (sourceList == null) {
+            return;
+        }
         for (Source source : sourceList
                 ) {
             source.stop();
-            source.delete();
         }
-        bufferList.clear();
-        sourceList = new ArrayList<>();
-        bufferList = new ArrayList<>();
     }
 
     private static String getKeyByPlace(int curnav) {
@@ -118,21 +143,29 @@ public class SoundUtil {
     }
 
     public static void playTags() {
+        //clean the sources
+        StopAllPrevSources();
         isReady = false;
         System.out.println("In play tags");
-        for (int i = 0; i < sourceList.size(); i++) {
-            sourceList.get(i).play(bufferList.get(i));
+        if (m_mode == NarrationMode.ARTICLE){
+            sourceList.get(2).play();
+
+        }
+        else{
+            for (int i = 0; i < sourceList.size(); i++) {
+                sourceList.get(i).play();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
             try {
-                Thread.sleep(1000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 //        AudioMaster.cleanUp();
         isReady = true;
@@ -143,7 +176,7 @@ public class SoundUtil {
     }
 
     public static void rotateRight() {
-        mCurrentTag = (mCurrentTag + 3) % _tags.get(mkey).size();
+        mCurrentTag = (mCurrentTag + 3) % mTagsList.size();
 
     }
 
@@ -151,22 +184,19 @@ public class SoundUtil {
         //lets set a voice for 3 tags lets see its different , idea : the voice will be diff from the previous tags
         //idea : if i have a voice dont change it
         update3NextTagsVoices();
-        int bufferLeft = AudioMaster.loadSound(createTTSTag(_tags.get(mkey).get(mCurrentTag)));
-        int bufferCenter = AudioMaster.loadSound(createTTSTag(_tags.get(mkey).get(mCurrentTag + 1)));
-        int bufferRight = AudioMaster.loadSound(createTTSTag(_tags.get(mkey).get(mCurrentTag + 2)));
-//        int bufferLeft = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag)));
-//        int bufferCenter = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 1)));
-//        int bufferRight = AudioMaster.loadSound(createTTSTag(tags.get(mCurrentTag + 2)));
-        bufferList.set(0, bufferRight);
-        bufferList.set(1, bufferCenter);
-        bufferList.set(2, bufferLeft);
+        int bufferLeft = AudioMaster.loadSound(createTTSTag(  mTagsList.get(mCurrentTag)));
+        int bufferCenter = AudioMaster.loadSound(createTTSTag(mTagsList.get(mCurrentTag + 1)));
+        int bufferRight = AudioMaster.loadSound(createTTSTag( mTagsList.get(mCurrentTag + 2)));
+        sourceList.get(0).setBuffer(bufferLeft);
+        sourceList.get(1).setBuffer(bufferRight);
+        sourceList.get(2).setBuffer(bufferCenter);
     }
 
     private static void update3NextTagsVoices() {
         ArrayList<String> voices = get3RandomVoices();
         for (int i = 0; i < 3; i++) {
-            if (_tags.get(mkey).get(mCurrentTag + i).getVoice() == null)
-                _tags.get(mkey).get(mCurrentTag + i).setVoice(voices.get(i));
+            if (mTagsList.get(mCurrentTag + i).getVoice() == null)
+                mTagsList.get(mCurrentTag + i).setVoice(voices.get(i));
         }
     }
 
@@ -183,10 +213,11 @@ public class SoundUtil {
     }
 
     public static void rotateLeft() {
-        if (mCurrentTag == 0) {
-            mCurrentTag = _tags.get(mkey).size() - 3;
+        mCurrentTag = mTagsList.size() - 3;
+        if (mCurrentTag < 0) {
+            mCurrentTag = (mTagsList.size()+mCurrentTag);
         } else {
-            mCurrentTag = (mCurrentTag - 3) % _tags.get(mkey).size();
+            mCurrentTag = (mCurrentTag - 3) % mTagsList.size();
         }
     }
 
@@ -244,23 +275,23 @@ public class SoundUtil {
         //init the voices
         initVoices();
 
-        for (int i = 0; i < _tags.keySet().size(); i++) {
-            mMainNavTags = createMainNavTagsFromKeys(_tags.keySet());
-            //warning will fall if more than 2 nav option
-            mMainNavTags.get(i).setVoice(voices.get(i + 3));
-            int buffer = AudioMaster.loadSound(createTTSTag(mMainNavTags.get(i)));
-            bufferList.add(buffer);
-            final Source source = new Source();
-            source.setBuffer(buffer);
-            //the center source, special position(with y)
-            if (i % 2 == 1) {
-                source.setPosition((float) (-20 + (i * xInc)), 10, 0);
-            } else {
-                source.setPosition((float) (-20 + (i * xInc)), 0, 0);
-            }
-            source.setLooping(true);
-            sourceList.add(source);
-        }
+//        for (int i = 0; i < _tags.keySet().size(); i++) {
+//            mMainNavTags = createMainNavTagsFromKeys(_tags.keySet());
+//            //warning will fall if more than 2 nav option
+//            mMainNavTags.get(i).setVoice(voices.get(i + 3));
+//            int buffer = AudioMaster.loadSound(createTTSTag(mMainNavTags.get(i)));
+//            bufferList.add(buffer);
+//            final Source source = new Source();
+//            source.setBuffer(buffer);
+//            //the center source, special position(with y)
+//            if (i % 2 == 1) {
+//                source.setPosition((float) (-20 + (i * xInc)), 10, 0);
+//            } else {
+//                source.setPosition((float) (-20 + (i * xInc)), 0, 0);
+//            }
+//            source.setLooping(true);
+//            sourceList.add(source);
+//        }
         mCurrentTag = 0;
     }
 
@@ -281,22 +312,7 @@ public class SoundUtil {
      * @return
      */
     public static String getUrlFromSelectedTag(int keyPress) {
-        String url = "";
-        switch (keyPress) {
-            case 1:
-                url = _tags.get(mkey).get(mCurrentTag).getUrl();
-                mkey = _tags.get(mkey).get(mCurrentTag).getName();
-                break;
-            case 2:
-                url = _tags.get(mkey).get(mCurrentTag + 1).getUrl();
-                mkey = _tags.get(mkey).get(mCurrentTag + 1).getName();
-                break;
-            case 3:
-                url = _tags.get(mkey).get(mCurrentTag + 2).getUrl();
-                mkey = _tags.get(mkey).get(mCurrentTag + 2).getName();
-                break;
-        }
-        return url;
+        return  mTagsList.get(mCurrentTag+keyPress-1).getUrl();
     }
 
     /**
@@ -352,5 +368,39 @@ public class SoundUtil {
             sourceList.add(source);
         }
         mCurrentTag = 0;
+    }
+
+    public static void initBuffers(NarrationMode mode) {
+        m_mode = mode;
+        switch (mode) {
+            case MAIN_NAVIGATION:
+                ArrayList<String> keyList = new ArrayList<> ( _tags.keySet());
+                for (int i = 0; i < _tags.size(); i++) {
+                    String tag = keyList.get(i);
+                    int buffer = AudioMaster.loadSound(createTTSString(tag, 3+i));
+                    sourceList.get(i).setBuffer(buffer);
+                }
+                break;
+            case SUB_NAVIGATION:
+                for (int i = 0; i < 3; i++) {
+                    mTagsList.get(i).setVoice(voices.get(3+i));
+                    int buffer = AudioMaster.loadSound(createTTSTag(mTagsList.get(i)));
+                    sourceList.get(i).setBuffer(buffer);
+
+                }
+                break;
+            case ARTICLE:
+                mTagsList.get(0).setVoice(voices.get(3));
+                int buffer = AudioMaster.loadSound(createTTSTag(mTagsList.get(0)));
+                sourceList.get(2).setBuffer(buffer);
+
+                break;
+        }
+    }
+
+    private static AudioInputStream createTTSString(String tag, int voice) {
+        TextToSpeech tts = new TextToSpeech();
+        tts.setVoice(voices.get(voice));
+        return tts.createAudioInputStream(tag);
     }
 }

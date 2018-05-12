@@ -17,6 +17,16 @@ public class Engine {
     private static final float LISTENER_POS_X = 0, LISTENER_POS_Y = 0, LISTENER_POS_Z = 0;
     private MainFrame mainFrame;
 
+    public static AScrapper getaScrapper() {
+        return aScrapper;
+    }
+
+    public void setaScrapper(AScrapper aScrapper) {
+        this.aScrapper = aScrapper;
+    }
+
+    private static AScrapper aScrapper;
+
     /**
      * This is the default constructor
      */
@@ -52,12 +62,20 @@ public class Engine {
 
     /**
      * This function calls the scrapper and tells him to scrape all the required details that we need
+     *
      * @param scrapper
      */
     public void startScrapping(AScrapper scrapper) {
-        Map<String,List<Tag>> items = scrapper.getItems();
+        //get the items from the home page of the specific website
+        setaScrapper(scrapper);
+        Map<String, List<Tag>> items = scrapper.getItems();
         SoundUtil.setDictionaryTags(items);
+
+        //sound initialization
         AudioMaster.init();
         AudioMaster.setListenerData(LISTENER_POS_X, LISTENER_POS_Y, LISTENER_POS_Z);
+
+        //set the key listener to the scrapper listener
+        mainFrame.setScrapperListener();
     }
 }

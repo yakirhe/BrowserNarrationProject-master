@@ -2,7 +2,7 @@ package GUI;
 
 import App.Engine;
 import Utils.Scrapper.*;
-import Utils.UserInput.KeyHandler;
+import Utils.UserInput.InputHandler;
 
 import javax.swing.*;
 
@@ -12,15 +12,10 @@ import javax.swing.*;
 public class MainFrame extends JFrame {
     private final String TITLE = "3D Narration for web browser";
     private JPanel mainPanel;
-    private KeyHandler.KeyHandlerSelection keyListener;
+    private InputHandler.KeyHandlerSelection keyListener;
     private Engine engine;
 
-    private boolean keyIsPressed;
-    private boolean mMouseMoveDetection;
-    private boolean mainNavMode;
-    private boolean subNavMode;
-    private boolean articleMode;
-    private int currentMap;
+    private InputHandler.MouseHandler mouseListener;
 
 
     public MainFrame(Engine engine) {
@@ -44,9 +39,14 @@ public class MainFrame extends JFrame {
 
     }
 
+    public void setMouseListener() {
+        mouseListener = new InputHandler.MouseHandler(this);
+        this.addMouseMotionListener(mouseListener);
+    }
+
     public void selectOption() {
         //add a key listener to handle the user input
-        keyListener = new KeyHandler.KeyHandlerSelection(this);
+        keyListener = new InputHandler.KeyHandlerSelection(this, 1);
         this.addKeyListener(keyListener);
 
         //1. play the different options to the user
@@ -90,6 +90,12 @@ public class MainFrame extends JFrame {
         }
 
         engine.startScrapping(scrapper);
+    }
+
+    public void setScrapperListener() {
+        //add a key listener to handle the user input
+        keyListener = new InputHandler.KeyHandlerSelection(this, 2);
+        this.addKeyListener(keyListener);
     }
 
 //    /**
