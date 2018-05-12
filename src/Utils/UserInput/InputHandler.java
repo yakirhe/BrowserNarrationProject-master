@@ -122,7 +122,7 @@ public class InputHandler {
                     Engine.getaScrapper().openWebsite(App.URL_LINK);
                     switch (type) {
                         case LINK:
-                            ArrayList<Tag> headlines = (ArrayList<Tag>) Engine.getaScrapper().getItems().get("HeadLine");
+                            ArrayList<Tag> headlines = (ArrayList<Tag>)( Engine.getaScrapper().getItems().get("Headlines"));
                             SoundUtil.setmTagsList(headlines);
                             SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
                             SoundUtil.playTags();
