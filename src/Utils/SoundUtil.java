@@ -261,7 +261,6 @@ public class SoundUtil {
                 mTagsList.get(0).setVoice(voices.get(3));
                 int buffer = AudioMaster.loadSound(createTTSTag(mTagsList.get(0)));
                 sourceList.get(2).setBuffer(buffer);
-
                 break;
         }
     }

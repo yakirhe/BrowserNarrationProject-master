@@ -86,7 +86,7 @@ public class MainFrame extends JFrame {
                 break;
             case '4':
                 SoundUtil.playChoice("football365.wav");
-                scrapper = new SkySportsScrapper();
+                scrapper = new Football365Scrapper();
                 break;
         }
 

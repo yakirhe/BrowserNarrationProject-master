@@ -62,19 +62,7 @@ public class InputHandler {
             int c = e.getKeyCode();
 
             if (c == KeyEvent.VK_P && !play) {
-                play = true;
-
-                //1. init the layout
-                SoundUtil.createSources();
-
-                //2. init the initial buffers
-                SoundUtil.initBuffers(NarrationMode.MAIN_NAVIGATION);
-
-                //3. play the tags
-                SoundUtil.playTags();
-
-                //add mouse listener
-                app.setMouseListener();
+                playMenu();
             }
 
             //We only interact with the elements after the user pressed play
@@ -103,7 +91,28 @@ public class InputHandler {
                     SoundUtil.updateSources();
                     SoundUtil.playTags();
                     break;
+                case KeyEvent.VK_BACK_SPACE:
+                    playMenu();
+                    break;
             }
+        }
+
+        private void playMenu() {
+            play = true;
+
+            //1. init the layout
+            if(SoundUtil.getMode() != NarrationMode.MAIN_NAVIGATION){
+                SoundUtil.createSources();
+            }
+
+            //2. init the initial buffers
+            SoundUtil.initBuffers(NarrationMode.MAIN_NAVIGATION);
+
+            //3. play the tags
+            SoundUtil.playTags();
+
+            //add mouse listener
+            app.setMouseListener();
         }
 
         private void updateSourcesByKeyPress(int keyPress) {
