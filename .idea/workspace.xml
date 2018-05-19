@@ -2,18 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="109dd855-6ba9-47b8-a900-30e6ada16b59" name="Default" comment="sadsadjhkj">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/football365.wav" afterPath="$PROJECT_DIR$/football365.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/introduction.wav" afterPath="$PROJECT_DIR$/introduction.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log4j-api-2.0-beta9.jar" afterPath="$PROJECT_DIR$/log4j-api-2.0-beta9.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ojsimpson.wav" afterPath="$PROJECT_DIR$/ojsimpson.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/skysports.wav" afterPath="$PROJECT_DIR$/skysports.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startnavigation.wav" afterPath="$PROJECT_DIR$/startnavigation.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vox.wav" afterPath="$PROJECT_DIR$/vox.wav" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App/App.java" afterPath="$PROJECT_DIR$/src/App/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/SoundUtil.java" afterPath="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java" afterPath="$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/WebViewer.java" afterPath="$PROJECT_DIR$/src/Utils/WebViewer.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/TheveargeScrapper.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/BrowserNarrationProject.iml" afterPath="$PROJECT_DIR$/BrowserNarrationProject.iml" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/App.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/App.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Source.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Source.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/VoxScrapper.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Scrapper/VoxScrapper.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/SoundUtil.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/SoundUtil.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Tag.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/Tag.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/WebViewer.class" afterPath="$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/WebViewer.class" />
+      <change beforePath="$PROJECT_DIR$/src/App/Source.java" afterPath="$PROJECT_DIR$/src/App/Source.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java" afterPath="$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/SoundUtil.java" afterPath="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/Tag.java" afterPath="$PROJECT_DIR$/src/Utils/Tag.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java" afterPath="$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utils/WebUtil.java" afterPath="$PROJECT_DIR$/src/Utils/WebUtil.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,21 +29,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AudioMaster.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/AudioMaster.java">
+      <file leaf-file-name="WebViewer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/WebViewer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+            <state relative-caret-position="195">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AScrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/AScrapper.java">
+      <file leaf-file-name="Source.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/Source.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="233">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding>
+                <element signature="e#1309#1310#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaveData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/WaveData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="173" column="9" lean-forward="true" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="75" column="47" lean-forward="false" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="287" column="54" lean-forward="false" selection-start-line="287" selection-start-column="54" selection-end-line="287" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TheveargeScrapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/TheveargeScrapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -48,7 +94,7 @@
       <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="391">
               <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
               <folding />
             </state>
@@ -58,60 +104,19 @@
       <file leaf-file-name="SkySportsScrapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="391">
               <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Football365Scrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/Football365Scrapper.java">
+      <file leaf-file-name="AudioMaster.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App/AudioMaster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VoxScrapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="97">
+              <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SoundUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="291" column="25" lean-forward="true" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#656#657#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#949#950#0" expanded="true" />
-                <marker date="1526707939999" expanded="true" signature="9416:9422" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -119,22 +124,8 @@
       <file leaf-file-name="Engine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#530#531#0" expanded="true" />
-                <marker date="1526123548204" expanded="true" signature="1670:1678" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebViewer.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Utils/WebViewer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="-583">
+              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -211,13 +202,21 @@
         <option value="$PROJECT_DIR$/src/Utils/WebViewer.java" />
         <option value="$PROJECT_DIR$/src/Utils/SoundUtil.java" />
         <option value="$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java" />
+        <option value="$PROJECT_DIR$/src/Utils/Scrapper/TheveargeScrapper.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="601" />
+    <option name="y" value="87" />
+    <option name="width" value="1556" />
+    <option name="height" value="884" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -234,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
@@ -284,7 +284,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -299,6 +298,278 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\daniv\Desktop\My Projects\BrowserNarrationProject-master\src\Utils\Scrapper" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/football365.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/introduction.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/log4j-api-2.0-beta9.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/ojsimpson.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/App/App.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Engine.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/App/Source.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/GUI/MainFrame.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/Utils/SoundUtil.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/skysports.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/App/App.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/App/Engine.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/GUI/MainFrame.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Utils/SoundUtil.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Utils/WebViewer.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/startnavigation.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vox.wav</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/changeToArticle.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Utils/Scrapper/Football365Scrapper.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/0.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/1.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/10.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/11.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/12.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/13.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/14.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/15.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/16.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/17.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/18.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/19.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/2.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/20.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/21.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/22.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/23.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/24.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/25.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/26.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/27.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/28.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/29.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/3.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/30.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/31.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/32.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/33.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/34.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/35.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/36.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/37.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/38.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/39.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/4.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/40.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/41.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/42.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/43.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/44.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/45.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/46.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/47.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/48.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/49.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/5.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/50.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/51.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/52.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/53.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/54.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/55.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/56.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/57.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/58.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/59.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/6.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/60.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/61.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/62.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/63.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/64.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/65.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/66.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/67.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/7.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/8.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/9.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/0.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/1.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/10.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/11.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/12.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/13.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/14.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/15.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/16.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/17.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/18.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/19.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/2.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/20.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/21.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/22.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/23.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/24.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/25.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/26.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/27.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/28.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/29.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/3.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/30.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/31.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/32.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/33.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/34.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/35.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/36.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/37.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/38.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/39.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/4.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/40.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/41.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/42.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/43.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/44.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/45.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/46.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/47.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/48.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/49.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/5.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/50.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/51.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/52.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/53.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/54.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/55.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/56.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/57.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/58.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/59.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/6.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/60.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/61.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/62.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/63.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/64.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/65.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/66.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/67.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/7.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/8.wav</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/BrowserNarrationProject/audio/9.wav</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -311,7 +582,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -330,13 +608,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="BrowserNarrationProject" />
       <envs />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -372,12 +643,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -411,6 +676,12 @@
       <envs />
       <properties />
       <listeners />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="" />
@@ -685,39 +956,65 @@
     <option name="localTasksCounter" value="20" />
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="13987000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284055" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39626783" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3952" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39493138" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25624081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25520834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3808" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3812038" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39626783" sideWeight="0.50416666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60645163" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6245161" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3808" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="simpleUML" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3952" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25624081" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3552" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -810,19 +1107,19 @@
           <option name="timeStamp" value="97" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Utils/WebViewer.java</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Utils/Scrapper/Football365Scrapper.java</url>
           <line>32</line>
           <properties />
           <option name="timeStamp" value="99" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java</url>
+          <line>300</line>
+          <properties />
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="103" />
+      <option name="time" value="106" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -836,13 +1133,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
@@ -871,12 +1161,8 @@
         <state relative-caret-position="3045">
           <caret line="145" column="6" lean-forward="true" selection-start-line="145" selection-start-column="6" selection-end-line="145" selection-end-column="6" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <marker date="1526707939999" expanded="true" signature="9416:9422" ph="{...}" />
+            <element signature="e#8996#8997#0" expanded="true" />
+            <element signature="e#9023#9024#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -962,13 +1248,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Map.java" />
     <entry file="file://$PROJECT_DIR$/src/Utils/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -984,24 +1263,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/WebUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="33" column="38" lean-forward="true" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="92" column="19" lean-forward="false" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
-          <folding>
-            <marker date="1526122199820" expanded="true" signature="3016:3021" ph="//..." />
-          </folding>
+        <state relative-caret-position="4828">
+          <caret line="295" column="5" lean-forward="false" selection-start-line="295" selection-start-column="5" selection-end-line="295" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,25 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Source.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="60" column="69" lean-forward="false" selection-start-line="60" selection-start-column="69" selection-end-line="60" selection-end-column="69" />
-          <folding>
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/WaveData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="173" column="9" lean-forward="true" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/NarrationMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1056,52 +1306,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/AudioPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="302" column="20" lean-forward="true" selection-start-line="302" selection-start-column="20" selection-end-line="302" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="21" column="29" lean-forward="true" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <marker date="1526123548204" expanded="true" signature="1670:1678" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/AudioMaster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        <state relative-caret-position="2108">
+          <caret line="141" column="42" lean-forward="false" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1114,45 +1320,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="291" column="25" lean-forward="true" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#656#657#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <marker date="1526707939999" expanded="true" signature="9416:9422" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/Football365Scrapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/Utils/SoundUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="143" column="0" lean-forward="false" selection-start-line="143" selection-start-column="0" selection-end-line="143" selection-end-column="0" />
+        <state relative-caret-position="174">
+          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#8996#8997#0" expanded="true" />
+            <element signature="e#9023#9024#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/OJScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/WebViewer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/UserInput/InputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="287" column="54" lean-forward="false" selection-start-line="287" selection-start-column="54" selection-end-line="287" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/SkySportsScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/TheveargeScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="35" column="6" lean-forward="false" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/AudioMaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-583">
+          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/Source.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#1309#1310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/WaveData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="173" column="9" lean-forward="true" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utils/Scrapper/VoxScrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="112" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="75" column="47" lean-forward="false" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="47" />
           <folding />
         </state>
       </provider>

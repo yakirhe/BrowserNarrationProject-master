@@ -123,7 +123,7 @@ public class SoundUtil {
 
 
 
-    public static void playTags() {
+    public static void playTags() throws InterruptedException {
         //clean the sources
         StopAllPrevSources();
         isReady = false;
@@ -141,11 +141,7 @@ public class SoundUtil {
                 }
             }
 
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
         }
         isReady = true;
     }
@@ -196,7 +192,7 @@ public class SoundUtil {
         }
     }
 
-    public static void playBuffer() {
+    public static void playBuffer() throws InterruptedException {
         int buffer = AudioMaster.loadSound(App.ais);
         final Source source = new Source();
         source.setBuffer(buffer);

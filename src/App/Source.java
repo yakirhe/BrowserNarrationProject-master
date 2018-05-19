@@ -16,22 +16,21 @@ public class Source
 		sourceId = AL10.alGenSources();
 	}
 
-	public void play(final int buffer)
-	{
+	public void play(final int buffer) throws InterruptedException {
 		stop();
 		AL10.alSourcei(sourceId, AL10.AL_BUFFER, buffer);
 		continuePlaying();
 	}
 
-	public void play()
-	{
+	public void play() throws InterruptedException {
 		stop();
 		AL10.alSourcei(sourceId, AL10.AL_BUFFER, mBuffer);
 		continuePlaying();
 	}
 
-	public void continuePlaying()
-	{
+	public void continuePlaying() throws InterruptedException {
+
+		Thread.sleep(1000);
 		AL10.alSourcePlay(sourceId);
 	}
 

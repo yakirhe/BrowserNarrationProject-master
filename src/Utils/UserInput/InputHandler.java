@@ -48,7 +48,11 @@ public class InputHandler {
             if (mode == 1) {
                 menuHandler(e);
             } else {
-                scrapperHandler(e);
+                try {
+                    scrapperHandler(e);
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
             }
 
         }
@@ -58,7 +62,7 @@ public class InputHandler {
          *
          * @param e
          */
-        private void scrapperHandler(KeyEvent e) {
+        private void scrapperHandler(KeyEvent e) throws InterruptedException {
             //handle the user
             int c = e.getKeyCode();
 
@@ -100,11 +104,11 @@ public class InputHandler {
             }
         }
 
-        private void playMenu() {
+        private void playMenu() throws InterruptedException {
             play = true;
 
             //1. init the layout
-            if(SoundUtil.getMode() != NarrationMode.MAIN_NAVIGATION){
+            if (SoundUtil.getMode() != NarrationMode.MAIN_NAVIGATION) {
                 SoundUtil.createSources();
             }
 
@@ -118,7 +122,7 @@ public class InputHandler {
             app.setMouseListener();
         }
 
-        private void updateSourcesByKeyPress(int keyPress) {
+        private void updateSourcesByKeyPress(int keyPress) throws InterruptedException {
             switch (SoundUtil.getMode()) {
                 case MAIN_NAVIGATION:
                     //update sources and buffers
@@ -134,7 +138,7 @@ public class InputHandler {
                     switch (type) {
                         case LINK:
                             Engine.getaScrapper().openWebsite(App.URL_LINK);
-                            ArrayList<Tag> headlines = (ArrayList<Tag>)( Engine.getaScrapper().getItems().get("Headlines"));
+                            ArrayList<Tag> headlines = (ArrayList<Tag>) (Engine.getaScrapper().getItems().get("Headlines"));
                             SoundUtil.setmTagsList(headlines);
                             SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
                             SoundUtil.playTags();
@@ -217,10 +221,6 @@ public class InputHandler {
                 System.out.println("New Speed : " + newSpeed);
                 System.out.println("New Speed2 : " + newSpeed2);
             } else {
-                //check if needed to make a make quit zone around the mid source.
-                //pro : better sound of the mid source.
-                //con : in the start we wont all 3 sentence to be heard simultaneity
-                //idea: in the zone silence v1+v3 in half (0.25f)
                 float newVolume1 = getFirstSourceNewVolume(dX, dY);
                 float newVolume2 = getSecondSourceNewVolume(dX, dY);
                 float newVolume3 = getThirdSourceNewVolume(dX, dY);
@@ -235,25 +235,76 @@ public class InputHandler {
         }
 
         private float getThirdSourceNewVolume(float dX, float dY) {
-            float ans = dX / width;
-            if (dX <= (width * (5 / 8)))
-                ans = 0;
+//            //original
+//            float ans = dX / width;
+//            if (dX <= (width * (5 / 8)))
+//                ans = 0;
+//            System.out.println("New V3 : " + ans);
+//            return ans;
+            //test
+            float ans = 0;
+            ans = dX / width;
+            if ((dY / height) >= 0.5) { // firstHalf
+            } else {
+                ans = (float) (ans-0.2);
+            }
             System.out.println("New V3 : " + ans);
             return ans;
         }
 
         private float getSecondSourceNewVolume(float dX, float dY) {
+//            //original
+//            float ans = 0;
+//            if (dX >= (width / 2))
+//                ans = (1 - (dX / width)) * 2;
+//            else
+//                ans = (dX / width) * 2;
+//            System.out.println("New V2 : " + ans);
+//            return ans;
+            //test
             float ans = 0;
-            if (dX >= (width / 2))
-                ans = (1 - (dX / width)) * 2;
-            else
-                ans = (dX / width) * 2;
-            System.out.println("New V2 : " + ans);
-            return ans;
+            if ((dY / height) >= 0.5) {
+                if (dX >= (width / 2))
+                    ans = (1 - (dX / width)) * 2;
+                else
+                    ans = (dX / width) * 2;
+                System.out.println("New V2 : " + ans);
+                return (float) (ans - 0.2);
+            } else {
+                //get ansX
+                float ansX = 0;
+                if (dX >= (width / 2)) {
+                    ansX = (1 - (dX / width)) * 2;
+                } else {
+                    ansX = (dX / width) * 2;
+                }
+                //get ansY
+                float ansY = 1 - (dY / height);
+                //compute ans
+                if (dX > width / 3 && dX < width * (3 / 4)) {
+                    ans = (float) (ansY - 0.5 * ansX);
+                } else
+                    ans = (float) (ansY * 0.5 + ansX);
+                System.out.println("New V2 : " + ans);
+                return ans;
+            }
         }
 
         private float getFirstSourceNewVolume(float dX, float dY) {
-            float ans = 1 - (dX / width);
+//            //original
+//            float ans =0;
+//            float ansY = dY/height;
+//            float ansX = 1 - (dX / width);
+//            System.out.println("New V1 : " + ansX);
+//            return ansX;
+            //test
+            float ans = 0;
+            float ansX = 1 - (dX / width);
+            if (dY >= height / 2) {
+                ans = ansX;
+            } else {
+                ans = (float) (ansX - 0.2);
+            }
             System.out.println("New V1 : " + ans);
             return ans;
         }

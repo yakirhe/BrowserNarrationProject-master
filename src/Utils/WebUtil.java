@@ -228,7 +228,7 @@ public class WebUtil {
         return navsDictionary;
     }
 
-    private static ArrayList<Tag> union(List<Tag> list1, List<Tag> list2) {
+    public static ArrayList<Tag> union(List<Tag> list1, List<Tag> list2) {
         ArrayList<Tag> union = (ArrayList<Tag>) list1;
 
         for (Tag tag : list2) {
@@ -283,7 +283,7 @@ public class WebUtil {
      * @param mainContentText
      * @return
      */
-    private static Tag getArticleTag(String mainHeadLineText, String subHeadLineText, String mainContentText) {
+    public static Tag getArticleTag(String mainHeadLineText, String subHeadLineText, String mainContentText) {
         String content = " article main headline : " + mainHeadLineText + "article sub headline : " + subHeadLineText + "article main content : " + mainContentText;
         Tag tag = new Tag("article", content, Type.ARTICLE);
         tag.setUrl(App.URL_LINK);

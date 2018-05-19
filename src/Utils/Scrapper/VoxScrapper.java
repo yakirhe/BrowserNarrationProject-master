@@ -5,6 +5,8 @@ import Utils.Tag;
 import Utils.Type;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import us.codecraft.xsoup.XElements;
+import us.codecraft.xsoup.Xsoup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -76,14 +78,17 @@ public class VoxScrapper extends AScrapper {
         Elements h2 = doc.getElementsByTag("h2");
         for (Element header : h2) {
             Elements links = header.getElementsByTag("a");
+            Element x = links.first();
             //Check if the header is not part of an headline
             if(links.size()==0){
                 continue;
             }
+            XElements xpath = Xsoup.compile("").evaluate(x);
             String tagName = links.text();
             String tagUrl = links.get(0).attr("href");
             Tag tag = new Tag(tagName, tagName, Type.HEADLINE);
             tag.setUrl(tagUrl);
+            tag.setxPath(xpath);
             try {
                 //Check if everything is valid
                 if (tag.getName() != null && !tag.getName().equals("") && tag.getContent() != null && !tag.getContent().equals(""))
