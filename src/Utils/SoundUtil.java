@@ -284,6 +284,19 @@ public class SoundUtil {
         }
     }
 
+    public static void playChangeToArticle() {
+        String filename = "changeToArticle.wav";
+        try {
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(new File(filename)));
+            clip.start();
+        } catch (Exception exc) {
+            exc.printStackTrace(System.out);
+        }
+    }
+
+    public static void stopChangeToArticle(){clip.stop();}
+
     public static void stopInstruction() {
         clip.stop();
     }

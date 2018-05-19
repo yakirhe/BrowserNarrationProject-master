@@ -9,15 +9,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * in the webpage using selenium
  */
 public class WebViewer {
+    private WebDriver driver = null;
+
     public WebViewer(){
         //set the selenium
         System.setProperty("webdriver.chrome.driver", "./src/chromedriver.exe");
     }
 
     public void openWebsite(String url) {
-        WebDriver driver = new ChromeDriver();
+        if(driver == null){
+            driver = new ChromeDriver();
+        }
         driver.get(url); //open the url in chrome
-
         //log the action
         System.out.println("Connecting to " + url);
     }

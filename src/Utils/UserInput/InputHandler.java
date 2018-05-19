@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import static Utils.SoundUtil.mCurrentTag;
 import static Utils.SoundUtil.setNewSpeedToSources;
+import static com.google.common.collect.ComparisonChain.start;
 
 /**
  * Created by shaha on 28/03/
@@ -129,23 +130,28 @@ public class InputHandler {
                 case SUB_NAVIGATION:
                     Type type = SoundUtil.getmTagsList().get(mCurrentTag - 1 + keyPress).getType();
                     App.URL_LINK = SoundUtil.getUrlFromSelectedTag(keyPress);
-
-                    Engine.getaScrapper().openWebsite(App.URL_LINK);
+                    SoundUtil.StopAllPrevSources();
                     switch (type) {
                         case LINK:
+                            Engine.getaScrapper().openWebsite(App.URL_LINK);
                             ArrayList<Tag> headlines = (ArrayList<Tag>)( Engine.getaScrapper().getItems().get("Headlines"));
                             SoundUtil.setmTagsList(headlines);
                             SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
                             SoundUtil.playTags();
                             break;
                         case HEADLINE:
+                            SoundUtil.playChangeToArticle();
+                            Engine.getaScrapper().openWebsite(App.URL_LINK);
                             ArrayList<Tag> article = (ArrayList<Tag>) Engine.getaScrapper().getArticles();
                             SoundUtil.setmTagsList(article);
                             SoundUtil.StopAllPrevSources();
                             SoundUtil.initBuffers(NarrationMode.ARTICLE);
+                            SoundUtil.stopChangeToArticle();
                             SoundUtil.playTags();
                             break;
                     }
+                    break;
+                case ARTICLE:
                     break;
                 default:
                     return;

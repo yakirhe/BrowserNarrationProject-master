@@ -1,6 +1,7 @@
 package App;
 
 import GUI.MainFrame;
+import Utils.Scrapper.AScrapper;
 import Utils.SoundUtil;
 import Utils.Tag;
 import Utils.WebUtil;
