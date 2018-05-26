@@ -1,7 +1,6 @@
 package Utils;
 
 import Utils.Type;
-import us.codecraft.xsoup.XElements;
 
 public class Tag {
     private String name;
@@ -9,7 +8,6 @@ public class Tag {
     private Type type;
     private String voice;
     private String url;
-    private XElements xPath;
 
     public Tag(String name, String content, Type type) {
         this.name = name;
@@ -70,11 +68,4 @@ public class Tag {
         this.url = url;
     }
 
-    public XElements getxPath() {
-        return xPath;
-    }
-
-    public void setxPath(XElements xPath) {
-        this.xPath = xPath;
-    }
 }

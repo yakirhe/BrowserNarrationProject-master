@@ -7,6 +7,7 @@ import Utils.UserInput.InputHandler;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * Created by shaha on 05/01/2018.
@@ -43,11 +44,10 @@ public class MainFrame extends JFrame {
         //1. play the different options to the user
 
         //Visual presentation of the options
-        JLabel label = new JLabel("<html>For the OJ Simpson site press 1 <br>" +
-                "For Vox news site press 2 <br>" +
-                "For sky sports site press 3 <br>" +
-                "For Football365 site press 4 <br>" +
-                "To repeat the options press 5</html>", SwingConstants.CENTER);
+        JLabel label = new JLabel("<html>For The verge website press 1 <br>" +
+                "For Vox news website press 2 <br>" +
+                "For Football365 website press 3 <br>" +
+                "To repeat the options press 4</html>", SwingConstants.CENTER);
         label.setFont(new Font("Serif", Font.BOLD, 28));
 
         add(label, BorderLayout.CENTER);
@@ -68,23 +68,19 @@ public class MainFrame extends JFrame {
      *               2 - VOX website
      *               3 - SkySports website
      */
-    public void setScrapper(char option) {
+    public void setScrapper(char option) throws IOException {
         AScrapper scrapper = null;
         switch (option) {
             case '1':
                 //create new oj scrapper
-                SoundUtil.playChoice("ojsimpson.wav");
-                scrapper = new OJScrapper();
+                SoundUtil.playChoice("theverge.wav");
+                scrapper = new TheveargeScrapper();
                 break;
             case '2':
                 SoundUtil.playChoice("vox.wav");
                 scrapper = new VoxScrapper();
                 break;
             case '3':
-                SoundUtil.playChoice("skysports.wav");
-                scrapper = new SkySportsScrapper();
-                break;
-            case '4':
                 SoundUtil.playChoice("football365.wav");
                 scrapper = new Football365Scrapper();
                 break;
@@ -94,9 +90,20 @@ public class MainFrame extends JFrame {
         SoundUtil.playChoice("startnavigation.wav");
     }
 
+    public void removeListeners(){
+        this.removeKeyListener(keyListener);
+        this.removeMouseMotionListener(mouseListener);
+
+
+    }
+
     public void setScrapperListener() {
         //add a key listener to handle the user input
         keyListener = new InputHandler.KeyHandlerSelection(this, 2);
         this.addKeyListener(keyListener);
+    }
+
+    public void removeMouseListener() {
+        this.removeMouseMotionListener(mouseListener);
     }
 }

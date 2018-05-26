@@ -8,8 +8,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import us.codecraft.xsoup.XElements;
-import us.codecraft.xsoup.Xsoup;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +16,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static Utils.WebUtil.extractNavElements;
 import static Utils.WebUtil.getArticleTag;
 import static Utils.WebUtil.union;
 
@@ -48,12 +45,12 @@ public class TheveargeScrapper extends AScrapper {
             if (links.size() == 0) {
                 continue;
             }
-            XElements xpath = Xsoup.compile("").evaluate(x);
+            //XElements xpath = Xsoup.compile("").evaluate(x);
             String tagName = links.text();
             String tagUrl = links.get(0).attr("href");
             Tag tag = new Tag(tagName, tagName, Type.HEADLINE);
             tag.setUrl(tagUrl);
-            tag.setxPath(xpath);
+            //tag.setxPath(xpath);
             try {
                 //Check if everything is valid
                 if (tag.getName() != null && !tag.getName().equals("") && tag.getContent() != null && !tag.getContent().equals(""))

@@ -12,6 +12,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static Utils.SoundUtil.mCurrentTag;
@@ -46,7 +47,11 @@ public class InputHandler {
         @Override
         public void keyPressed(KeyEvent e) {
             if (mode == 1) {
-                menuHandler(e);
+                try {
+                    menuHandler(e);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             } else {
                 try {
                     scrapperHandler(e);
@@ -97,12 +102,39 @@ public class InputHandler {
                     SoundUtil.playTags();
                     break;
                 case KeyEvent.VK_BACK_SPACE:
-                    play = false;
-                    SoundUtil.StopAllPrevSources();
-                    App.app.start(false);
+                case KeyEvent.VK_B:
+                    goBack();
                     break;
             }
         }
+
+        private void goBack() throws InterruptedException {
+            //stop all the sources
+            SoundUtil.StopAllPrevSources();
+            //check the current mode
+            switch(SoundUtil.getMode()){
+                case MAIN_NAVIGATION:
+                    SoundUtil.setMode(null);
+                    play = false;
+                    app.removeListeners();
+                    App.app.start(false);
+                    break;
+                case SUB_NAVIGATION:
+                    SoundUtil.setMode(NarrationMode.MAIN_NAVIGATION);
+                    app.removeMouseListener();
+                    //clear the sources
+                    SoundUtil.clearSourceList();
+                    playMenu();
+                    break;
+                case ARTICLE:
+                    SoundUtil.setMode(NarrationMode.SUB_NAVIGATION);
+                    SoundUtil.setmTagsList(SoundUtil.get_tags().get("Headlines"));
+                    SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
+                    SoundUtil.playTags();
+                    break;
+            }
+        }
+
 
         private void playMenu() throws InterruptedException {
             play = true;
@@ -162,18 +194,18 @@ public class InputHandler {
             }
         }
 
-        private void menuHandler(KeyEvent e) {
+        private void menuHandler(KeyEvent e) throws IOException {
             //handle the user
             char c = e.getKeyChar();
             System.out.println("The user pressed " + c); //log for our use
-            if (c == '1' || c == '2' || c == '3' || c == '4') {
+            if (c == '1' || c == '2' || c == '3') {
                 //remove the key listener from the app
                 app.removeSelectionListener();
                 SoundUtil.stopInstruction();
 
                 //set the selected choice to use the appropriate scrapper
                 app.setScrapper(c);
-            } else if (c == '5') {
+            } else if (c == '4') {
                 SoundUtil.stopInstruction();
                 SoundUtil.playInstructions();
             } else {
@@ -246,7 +278,7 @@ public class InputHandler {
             ans = dX / width;
             if ((dY / height) >= 0.5) { // firstHalf
             } else {
-                ans = (float) (ans-0.2);
+                ans = (float) (ans-0.5);
             }
             System.out.println("New V3 : " + ans);
             return ans;
@@ -303,7 +335,7 @@ public class InputHandler {
             if (dY >= height / 2) {
                 ans = ansX;
             } else {
-                ans = (float) (ansX - 0.2);
+                ans = (float) (ansX - 0.5);
             }
             System.out.println("New V1 : " + ans);
             return ans;

@@ -11,10 +11,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Football365Scrapper extends AScrapper{
+public class Football365Scrapper extends AScrapper {
     private final String URL = "http://www.football365.com/";
 
-    public Football365Scrapper(){
+    public Football365Scrapper() {
         super();
         this.openWebsite(URL);
     }
@@ -36,7 +36,7 @@ public class Football365Scrapper extends AScrapper{
                 mainContentText += " " + element1.text();
         }
         //see idea
-        Tag tag1 = getArticleTag(mainHeadLineText,"sub headline text", mainContentText);
+        Tag tag1 = getArticleTag(mainHeadLineText, "sub headline text", mainContentText);
         Tag tag2 = new Tag("article", mainContentText, Type.ARTICLE);
         tag2.setUrl(App.URL_LINK);
         tags.add(tag2);
@@ -57,7 +57,7 @@ public class Football365Scrapper extends AScrapper{
         for (Element link : links) {
             String tagName = link.text();
             String tagUrl = link.attr("href");
-            if(!(tagUrl.indexOf("http") !=-1? true: false)){
+            if (!(tagUrl.indexOf("http") != -1 ? true : false)) {
                 tagUrl = URL;
             }
             Tag tag = new Tag(tagName, tagName, Type.LINK);

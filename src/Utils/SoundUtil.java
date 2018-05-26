@@ -306,4 +306,11 @@ public class SoundUtil {
             e.printStackTrace(System.out);
         }
     }
+
+    public static void clearSourceList() {
+        Source s = new Source();
+        s.setPosition(0, 10, 0);
+        s.setLooping(true);
+        sourceList.set(2,s);
+    }
 }

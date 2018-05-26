@@ -7,6 +7,7 @@ import Utils.WebViewer;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.lwjgl.system.CallbackI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,16 +19,20 @@ import java.util.Map;
  * Here we do all the common logic and initialization to our scrappers
  */
 public abstract class AScrapper implements IScrapper {
-    private final WebViewer webViewer;
+    private static   WebViewer webViewer = null;
     protected Element doc;
+    protected static boolean isOpen = false;
 
     public AScrapper(){
         //create a selenium instance
-        webViewer = new WebViewer();
+        if(!isOpen){
+            isOpen = true;
+            webViewer = new WebViewer();
+        }
     }
 
     public void openWebsite(String url){
-        webViewer.openWebsite(url);
+            webViewer.openWebsite(url);
         try {
             //load doc
             doc = Jsoup.connect(url).get();
