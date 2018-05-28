@@ -7,6 +7,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.lwjgl.system.CallbackI;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,11 +18,21 @@ import java.util.Map;
  * Created by shaha on 28/03/2018.
  */
 public class VoxScrapper extends AScrapper {
-    private final String URL = "https://www.vox.com/";
+
+    private  String URL = "https://www.vox.com/";
+
+
 
     public VoxScrapper() {
         super();
+        loadLocalURL();
         this.openWebsite(URL);
+    }
+
+    public void loadLocalURL(){
+        Path currentRelativePath = Paths.get("");
+        String local = currentRelativePath.toAbsolutePath().toString();
+        URL = local+"\\voxOffline\\www.vox.com\\index.html";
     }
 
     @Override

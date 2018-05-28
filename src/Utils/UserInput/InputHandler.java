@@ -54,6 +54,7 @@ public class InputHandler {
                 }
             } else {
                 try {
+
                     scrapperHandler(e);
                 } catch (InterruptedException e1) {
                     e1.printStackTrace();
@@ -202,6 +203,8 @@ public class InputHandler {
                 //remove the key listener from the app
                 app.removeSelectionListener();
                 SoundUtil.stopInstruction();
+                app.remove(app.getjLabel());
+                app.set_instruction_screen();
 
                 //set the selected choice to use the appropriate scrapper
                 app.setScrapper(c);

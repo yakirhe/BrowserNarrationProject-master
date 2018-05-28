@@ -16,6 +16,7 @@ public class MainFrame extends JFrame {
     private final String TITLE = "3D Narration for web browser";
     private InputHandler.KeyHandlerSelection keyListener;
     private Engine engine;
+    private JLabel jLabel;
 
     private InputHandler.MouseHandler mouseListener;
 
@@ -29,12 +30,36 @@ public class MainFrame extends JFrame {
         //Open the window on full screen
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public void setMouseListener() {
         mouseListener = new InputHandler.MouseHandler(this);
         this.addMouseMotionListener(mouseListener);
     }
+
+    public void set_instruction_screen(){
+        //Visual presentation of the options
+        JLabel instructLabel = new JLabel("<html>" +
+                "3D Narration Instruction And Tips<H1>" +
+                "<br>" +
+                " * If you move the  mouse to the source of the sound it will isolate and increase its volume<br>" +
+                "<br>" +
+                " * Press 1 to chose the left source , 2 for the center source , 3 for the right source <br>" +
+                "<br>" +
+                " * Press B to get back <br>" +
+                "<br>" +
+                " * In article you can move the mouse left to slow down and right to speed up the reading of the text <br>" +
+                "</html>", SwingConstants.CENTER);
+        instructLabel.setFont(new Font("Serif", Font.BOLD, 28));
+
+        add(instructLabel, BorderLayout.CENTER);
+
+        //update the gui
+        revalidate();
+        jLabel = instructLabel;
+    }
+
 
     public void selectOption() {
         //add a key listener to handle the user input
@@ -51,7 +76,7 @@ public class MainFrame extends JFrame {
         label.setFont(new Font("Serif", Font.BOLD, 28));
 
         add(label, BorderLayout.CENTER);
-
+        jLabel = label;
         //update the gui
         revalidate();
     }
@@ -105,5 +130,9 @@ public class MainFrame extends JFrame {
 
     public void removeMouseListener() {
         this.removeMouseMotionListener(mouseListener);
+    }
+
+    public JLabel getjLabel() {
+        return jLabel;
     }
 }
