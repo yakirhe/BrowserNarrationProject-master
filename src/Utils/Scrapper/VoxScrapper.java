@@ -25,8 +25,9 @@ public class VoxScrapper extends AScrapper {
 
     public VoxScrapper() {
         super();
+        isLocal = true;
         loadLocalURL();
-        this.openWebsite(URL);
+        this.openWebsite(URL,false);
     }
 
     public void loadLocalURL(){

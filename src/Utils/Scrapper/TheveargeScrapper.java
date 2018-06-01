@@ -24,7 +24,7 @@ public class TheveargeScrapper extends AScrapper {
 
     public TheveargeScrapper() throws IOException {
         super();
-        this.openWebsite(url);
+        this.openWebsite(url,false);
     }
 
 

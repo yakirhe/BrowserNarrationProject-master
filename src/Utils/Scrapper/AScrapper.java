@@ -5,10 +5,14 @@ import Utils.Tag;
 import Utils.Type;
 import Utils.WebViewer;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.lwjgl.system.CallbackI;
 
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,24 +23,38 @@ import java.util.Map;
  * Here we do all the common logic and initialization to our scrappers
  */
 public abstract class AScrapper implements IScrapper {
-    private static   WebViewer webViewer = null;
+    private static WebViewer webViewer = null;
     protected Element doc;
     protected static boolean isOpen = false;
+    protected static boolean isLocal = false;
 
-    public AScrapper(){
+    public AScrapper() {
         //create a selenium instance
-        if(!isOpen){
+        if (!isOpen) {
             isOpen = true;
             webViewer = new WebViewer();
         }
     }
 
-    public void openWebsite(String url){
-            webViewer.openWebsite(url);
+    public void openWebsite(String url,boolean isArticle) {
         try {
+
+            if (!isLocal) {
+                webViewer.openWebsite(url);
+                doc = Jsoup.connect(url).get();
+            }
+            else {
+                if(isArticle){
+                    Path currentRelativePath = Paths.get("");
+                    String local = currentRelativePath.toAbsolutePath().toString();
+                    url = local + "\\voxOffline\\www.vox.com\\" + url;
+                }
+                webViewer.openWebsite(url);
+                File input = new File(url);
+                doc = Jsoup.parse(input, "UTF-8", "");
+            }
             //load doc
-            doc = Jsoup.connect(url).get();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -47,9 +65,10 @@ public abstract class AScrapper implements IScrapper {
     @Override
     public abstract List<Tag> getMenus();
 
-    public abstract Map<String,List<Tag>> getItems();
+    public abstract Map<String, List<Tag>> getItems();
 
-    /** an helper method
+    /**
+     * an helper method
      * get nav element and extract list of tags
      *
      * @param navs

@@ -16,7 +16,7 @@ public class Football365Scrapper extends AScrapper {
 
     public Football365Scrapper() {
         super();
-        this.openWebsite(URL);
+        this.openWebsite(URL,false);
     }
 
 

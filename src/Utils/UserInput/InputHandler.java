@@ -170,7 +170,7 @@ public class InputHandler {
                     SoundUtil.StopAllPrevSources();
                     switch (type) {
                         case LINK:
-                            Engine.getaScrapper().openWebsite(App.URL_LINK);
+                            Engine.getaScrapper().openWebsite(App.URL_LINK,true);
                             ArrayList<Tag> headlines = (ArrayList<Tag>) (Engine.getaScrapper().getItems().get("Headlines"));
                             SoundUtil.setmTagsList(headlines);
                             SoundUtil.initBuffers(NarrationMode.SUB_NAVIGATION);
@@ -178,7 +178,7 @@ public class InputHandler {
                             break;
                         case HEADLINE:
                             SoundUtil.playChangeToArticle();
-                            Engine.getaScrapper().openWebsite(App.URL_LINK);
+                            Engine.getaScrapper().openWebsite(App.URL_LINK,true);
                             ArrayList<Tag> article = (ArrayList<Tag>) Engine.getaScrapper().getArticles();
                             SoundUtil.setmTagsList(article);
                             SoundUtil.StopAllPrevSources();
