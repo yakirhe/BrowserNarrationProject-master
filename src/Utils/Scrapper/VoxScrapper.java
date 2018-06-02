@@ -45,9 +45,13 @@ public class VoxScrapper extends AScrapper {
         //idea : do i wont to read the head line and sub head line ? i extract and make a simple function that make example but i dont use it
         Elements mainHeadline = doc.getElementsByTag("h1");
         for (Element element : mainHeadline) {
-            mainHeadLineText = element.text();
-            Element subHeadline = doc.select("h2").first();
-            subHeadLineText = subHeadline.text();
+            try{
+                mainHeadLineText = element.text();
+                Element subHeadline = doc.select("h2").first();
+                subHeadLineText = subHeadline.text();
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
         }
 
         Elements contentElements = doc.getElementsByClass("c-entry-content");
