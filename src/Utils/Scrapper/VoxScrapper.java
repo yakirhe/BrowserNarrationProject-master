@@ -57,6 +57,9 @@ public class VoxScrapper extends AScrapper {
                     ) {
                 if (element1.tagName().equals("p") || element1.tagName().equals("blockquote"))
                     mainContentText += " " + element1.text();
+                    if(mainContentText.split(" ").length == 200){
+                        break;
+                    }
             }
         }
         //see idea

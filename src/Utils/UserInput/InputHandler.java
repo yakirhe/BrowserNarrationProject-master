@@ -180,6 +180,7 @@ public class InputHandler {
                             SoundUtil.playChangeToArticle();
                             Engine.getaScrapper().openWebsite(App.URL_LINK,true);
                             ArrayList<Tag> article = (ArrayList<Tag>) Engine.getaScrapper().getArticles();
+                            article.get(0).setContent(onePhraseContent(article));
                             SoundUtil.setmTagsList(article);
                             SoundUtil.StopAllPrevSources();
                             SoundUtil.initBuffers(NarrationMode.ARTICLE);
@@ -193,6 +194,15 @@ public class InputHandler {
                 default:
                     return;
             }
+        }
+
+        private String onePhraseContent(ArrayList<Tag> article) {
+            String[] onePhraseArr = article.get(0).getContent().split(" ");
+            String onePhrase = "";
+            for (int i = 0; i < 300; i++){
+                onePhrase += " " + onePhraseArr[i];
+            }
+            return onePhrase;
         }
 
         private void menuHandler(KeyEvent e) throws IOException {
